@@ -128,7 +128,7 @@ hash_ok = True
 for fname, fhash in [("proxy.py", hash_proxy), ("edenEquips.pl", hash_eden)]:
     matching = [r for r in file_hashes if r["filename"] == fname]
     if not matching or matching[0]["sha256"] != fhash:
-        print(f"{fname} não autorizado ou alterado", file=sys.stderr)
+        print(f"{fname} not authorized or modified", file=sys.stderr)
         hash_ok = False
 
 if not hash_ok:

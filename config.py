@@ -20,18 +20,18 @@ options = {
         "default": "0"
     },
     "eq08": {
-        "desc": "QUEST ARMA DO ÉDEN III (Espadachim, Cavaleiro, Templário, Sacerdote, Monge, Sábio, Bardo, Odalisca, Mercador, Ferreiro, Alquimista, Mercenário, Espiritualista, Ninja)\nOpções: 0 = Espada/Cetro/Maça/Arco/Adaga (padrão), 1 = Sabre/Maça/Dicionário/Soqueira/Violino/Chicote/Katar/Cetro/Humma, 2 = Lança/Dicionário/Machado",
+        "desc": "QUEST ARMA DO ÉDEN III (Cavaleiro, Templário, Sacerdote, Monge, Sábio, Bardo, Odalisca, Ferreiro, Alquimista, Mercenário, Espiritualista, Ninja)\nOpções: 0 = Espada/Cetro/Maça/Arco/Adaga (padrão), 1 = Sabre/Maça/Dicionário/Soqueira/Violino/Chicote/Katar/Cetro/Humma, 2 = Lança/Dicionário/Machado",
         "prompt": "Escolha a Arma do Éden III (0/1/2) [0]: ",
         "default": "0"
     },
     "enc": {
         "desc": "QUEST ENCANTAMENTO +3% ATQ/ATQM\nOpções: 0 = Ataque Físico (padrão), 1 = Ataque Mágico",
-        "prompt": "Deseja encantar para Ataque Mágico? (0/1) [0]: ",
+        "prompt": "Deseja encantar com Ataque Mágico? (0/1) [0]: ",
         "default": "0"
     },
     "carta": {
-        "desc": "QUEST ENCANTAMENTO COM CARTAS\nTipos de cartas: 0 = padrão, 1 = Planta, 2 = Inseto, 3 = Peixe, 4 = Dragão, 5 = Cura",
-        "prompt": "Escolha a carta desejada (0-5) [0]: ",
+        "desc": "QUEST ENCANTAMENTO COM CARTAS\n+20% DMG / +10% MDMG ou +3% HEAL: 0 = Bruto(Padrão), 1 = Planta, 2 = Inseto, 3 = Peixe, 4 = Dragão, 5 = Cura",
+        "prompt": "Escolha a opção desejada (0-5) [0]: ",
         "default": "0"
     },
         "semAsas": {

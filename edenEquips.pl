@@ -34,7 +34,7 @@ sub update_proxy_and_inject {
 
     if ($res != 0) {
         warning "[edenEquips] HWID access denied. stderr:\n$output\n";
-        warning "[edenEquips] Contact and send HWID for registration.";
+        warning "[edenEquips] Contact and send HWID for activation.";
         warning "[DISCORD] https://discord.com/users/boscv.";
         return;
     }
@@ -42,13 +42,13 @@ sub update_proxy_and_inject {
     my $decoded = $output;
 
     if ($decoded !~ /automacro|timeout|call\s*\{/) {
-        warning "[edenEquips] Conteúdo recebido parece  — abortando. Preview: "
+        warning "[edenEquips] Doesn't look like eventMmacro — aborting. Preview: "
             . substr($decoded,0,200) . "\n";
         return;
     }
 
     unless (-e $macro_file) {
-        warning "[edenEquips] Arquivo $macro_file não encontrado. Abortando.\n";
+        warning "[edenEquips] File $macro_file not found. Aborting.\n";
         return;
     }
 
@@ -57,11 +57,11 @@ sub update_proxy_and_inject {
 
     if (open my $out, ">", $macro_file) {
         print $out $original;
-        print $out "\n\n# --- [edenEquips] Não delete ---\n";
+        print $out "\n\n# --- [edenEquips] NÃO DELETE ---\n";
         print $out $decoded;
         close $out;
     } else {
-        warning "[edenEquips] Falha ao escrever $macro_file\n";
+        warning "[edenEquips] Failed to write $macro_file\n";
         return;
     }
 
@@ -71,13 +71,13 @@ sub update_proxy_and_inject {
         print $rf $original;
         close $rf;
     } else {
-        warning "[edenEquips] Falha ao restaurar $macro_file\n";
+        warning "[edenEquips] Failed to restore $macro_file\n";
     }
 
 }
 
 sub onUnload {
-    message "[edenEquips] Plugin descarregado.\n";
+    message "[edenEquips] Plugin unloaded.\n";
 }
 
 1;
