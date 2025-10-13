@@ -1,4 +1,6 @@
 ## 🛡️ edenEquips (LATAM)
+![Static Badge](https://img.shields.io/badge/Discord-%237289DA?logo=discord&logoColor=%23fff&cacheSeconds=discord.com%2Fusers%2Fboscv.)
+
 Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkore (Servidor Latam)
 
 ## 📜 Quests Incluídas (Todas as classes)
