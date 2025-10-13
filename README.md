@@ -33,7 +33,7 @@ Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkor
   - Adicione *edenEquips* em **sys.txt** no final da linha *loadPlugins_list*.
   - Em caso de necessidade de reinjeção, use *'plugin reload edenEquips'* no console.
 
-## 🛠️ Configurações necessárias:
+## 🛠️ Configurações necessárias para boa execução do plugin:
 
 * **config.txt**:
   - *storageAuto_npc* com coordenadas configuradas.
