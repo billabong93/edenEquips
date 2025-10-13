@@ -1,5 +1,5 @@
 ## 🛡️ edenEquips
-Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkore
+Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkore (Servidor Latam)
 
 ## 📜 Quests Incluídas (Todas as classes)
 
