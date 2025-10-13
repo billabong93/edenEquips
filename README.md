@@ -1,6 +1,22 @@
 ## 🛡️ edenEquips
 Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkore
 
+## 📜 Quests Incluídas
+
+  - Resgate de equipamentos do Éden na Academia Criatura na primeira mudança de classe (pós nível de base 7).
+  - Quests de equipamentos dos níveis 26, 40 e 60.
+  - Quests de encantamento e cartas dos níveis 70, 80 e 90.
+
+## 🤖 Funções Principais:
+
+  - Configuração personalizada de equipamentos, encantamentos e cartas.
+  - Equipa automáticamente itens recebidos após as quests.
+  - Teleport avançado (routeTeleport e teleportAuto_search) para maior eficiência e sobrevivência.
+  - Teleport se mob se aproximar do bot sentado durante o teleportAuto_search.
+  - Compra automática e uso de Asas de Mosquito e Poções Laranjas. (Possível desativar)
+  - Retorno seguro ao local original do bot, restaurando configurações.
+  - Failsafes para concluir quests mesmo com reload, operação manual ou fechamento do programa.
+
 ## ⚙️ Requisitos:
 
   - Python
@@ -104,3 +120,8 @@ Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkor
   - eden09 (0, 1, 2, 3, end)	- 2 = Realização da Quest.
   - eden10 (0, 1, 2, 3, end)	- 3 = Resgate de equipamentos.
   - eden11 (0, 1, 2, 3, end)	- end = Conclusão.
+
+## 🚀 Implementações futuras
+
+* Quests do Éden faltantes, com opções para preferência do usuário.
+* Quests diárias e equipamentos 100+.
