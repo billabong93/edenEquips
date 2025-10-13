@@ -1,5 +1,7 @@
 ## 🛡️ edenEquips (LATAM)
-![Static Badge](https://img.shields.io/badge/Discord-%237289DA?logo=discord&logoColor=%23fff&cacheSeconds=discord.com%2Fusers%2Fboscv.)
+[<img alt="Static Badge" target="_blank" src="https://img.shields.io/badge/Discord-.boscv-%237289DA?logo=discord&logoColor=%23fff">](https://discord.com/users/boscv.)\
+[<img alt="Static Badge" src="https://img.shields.io/badge/Discord-Openkore%20LATAM-%237289DA?logo=discord&logoColor=%23fff">](https://discord.com/channels/1396892709775605922)\
+[<img alt="Static Badge" src="https://img.shields.io/badge/F%C3%B3rum-Openkore%20LATAM-%23ec8736?logo=phpBB&logoColor=%23fff">](https://openkore.com.br/)
 
 Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkore (Servidor Latam)
 
