@@ -1,14 +1,14 @@
-# 🛡️ edenEquips
+## 🛡️ edenEquips
 Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkore
 
-# ⚙️ Requisitos:
+## ⚙️ Requisitos:
 
   - Python
   - Automacro aeroplano ra_fild12. (https://openkore.com.br/viewtopic.php?p=6470)
   - Se não existir, criar um arquivo eventMacros.txt na pasta ./control.
   - Pasta ./fields e portals.txt atualizados: (https://github.com/dhmello/openkore_latam)
 
-# 📝 Instruções:
+## 📝 Instruções:
 
   - Use config.py para configurar suas opções de equipamentos, encantamentos e cartas.
     Ou insira as variáveis manualmente no config.txt.
@@ -19,7 +19,7 @@ Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkor
   - Adicione edenEquips em sys.txt no final da linha loadPlugins_list.
   - Em caso de necessidade de reinjeção, use 'plugin reload edenEquips' no console.
 
-# 🛠️ Configurações necessárias:
+## 🛠️ Configurações necessárias:
 
 * config.txt:
   - storageAuto_npc com coordenadas configuradas.
@@ -29,7 +29,7 @@ Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkor
   - AIRSHIP 500
   - moc_fild20 10000
 
-# ⚠️ O que não fazer:
+## ⚠️ O que não fazer:
 
   - 'reload eventMacros' durante a execução do plugin.
   - Jamais apague as variáveis criadas pelo/para o plugin em config.txt, salvo necessidade
@@ -37,7 +37,7 @@ Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkor
   - Não faça alterações no proxy.py ou edenEquips.pl. O acesso é barrado pelo servidor
     em caso de qualquer modificação ou ausência dos arquivos.
 
-# 📢 Informações e avisos:
+## 📢 Informações e avisos:
 
   - A maior parte das classes foi testada, e os equipamentos estão em sua maioria, se não todos,
     nas posições corretas. (Opções extraídas de .csv)
@@ -54,8 +54,26 @@ Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkor
   - O plugin não é configurado pra comprar ou fazer uso de pots de sp. Mas pegará do armazém ou
     comprará mais antes de começar qualquer quest, e usará, se seu bot estiver configurado para isso.
 
+## 🗃️ Estrutura da pasta:
 
-# 📄 Variáveis de configurações e suas funções: (Inseridas em config.txt)
+- openkore-master/
+  * 📁 control/
+    * 📄 eventMacros.txt
+  * 📁 fields/
+  * 📁 plugins/
+    * 📁 edenEquips/
+      * 📄 README.md
+      * 📄 config.py
+      * 📄 edenEquips.pl
+      * 📄 proxy.py
+  * 📁 tables/
+    * 📁 ROla/
+      * 📄 portals.txt
+
+
+
+
+## 💾 Variáveis de configurações e suas funções: (Inseridas em config.txt)
 
 * ⚔️ Equipamentos:
 
