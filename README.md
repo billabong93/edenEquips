@@ -25,9 +25,9 @@ Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkor
 ## ⚙️ Requisitos:
 
   - Python
-  - Automacro aeroplano *ra_fild12*. (https://openkore.com.br/viewtopic.php?p=6470)
+  - [Automacro aeroplano](https://openkore.com.br/viewtopic.php?p=6470) *ra_fild12*.
   - Se não existir, criar um arquivo **eventMacros.txt** na pasta **./control.**
-  - Pasta **./fields** e **portals.txt** atualizados: (https://github.com/dhmello/openkore_latam)
+  - Pasta [**./fields** e **portals.txt**](https://github.com/dhmello/openkore_latam) atualizados.
 
 ## 📝 Instruções:
 
