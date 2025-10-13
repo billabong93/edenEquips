@@ -1,14 +1,14 @@
-# edenEquips
+# 🛡️ edenEquips
 Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkore
 
-# Requisitos:
+# ⚙️ Requisitos:
 
   - Python
   - Automacro aeroplano ra_fild12. (https://openkore.com.br/viewtopic.php?p=6470)
   - Se não existir, criar um arquivo eventMacros.txt na pasta ./control.
   - Pasta ./fields e portals.txt atualizados: (https://github.com/dhmello/openkore_latam)
 
-# Instruções:
+# 📝 Instruções:
 
   - Use config.py para configurar suas opções de equipamentos, encantamentos e cartas.
     Ou insira as variáveis manualmente no config.txt.
@@ -19,7 +19,7 @@ Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkor
   - Adicione edenEquips em sys.txt no final da linha loadPlugins_list.
   - Em caso de necessidade de reinjeção, use 'plugin reload edenEquips' no console.
 
-# Configurações necessárias para um bom funcionamento:
+# 🛠️ Configurações necessárias:
 
 * config.txt:
   - storageAuto_npc com coordenadas configuradas.
@@ -29,7 +29,7 @@ Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkor
   - AIRSHIP 500
   - moc_fild20 10000
 
-# O que não fazer:
+# ⚠️ O que não fazer:
 
   - 'reload eventMacros' durante a execução do plugin.
   - Jamais apague as variáveis criadas pelo/para o plugin em config.txt, salvo necessidade
@@ -37,7 +37,7 @@ Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkor
   - Não faça alterações no proxy.py ou edenEquips.pl. O acesso é barrado pelo servidor
     em caso de qualquer modificação ou ausência dos arquivos.
 
-# Informações e avisos:
+# 📢 Informações e avisos:
 
   - A maior parte das classes foi testada, e os equipamentos estão em sua maioria, se não todos,
     nas posições corretas. (Opções extraídas de .csv)
@@ -55,9 +55,9 @@ Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkor
     comprará mais antes de começar qualquer quest, e usará, se seu bot estiver configurado para isso.
 
 
-# Variáveis de configurações do edenEquips e suas funções: (Inseridas em config.txt)
+# 📄 Variáveis de configurações e suas funções: (Inseridas em config.txt)
 
-* Equipamentos:
+* ⚔️ Equipamentos:
 
   - eq03 (0, 1) - Determina a opção de equipamentos da Quest nv26.
     Opções para: Espadachim, Noviço e Mercador.
@@ -68,20 +68,19 @@ Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkor
     Opções para: Espadachim, Cavaleiro, Templário, Sacerdote, Monge, Sábio, Bardo, 
     Odalisca, Mercador, Ferreiro, Alquimista, Mercenário, Espiritualista e Ninja.
 
-* Encantamentos:
+* 💎 Encantamentos:
 
   - enc (0, 1) - Determina se o encantamento de nv70 vai ser ATQ ou ATQM.
   - carta (0, 1, 2, 3, 4, 5) - Tipo de carta +DMG/MDMG ou fator de cura no encantamento nv80.
 
-* Utilizáveis:
+* 🧪 Utilizáveis:
 
   - semAsas (0, 1) - Desabilita a compra de Asas de Mosquito.
   - semPots (0, 1) - Desabilita a compra de Poções Laranjas.
 
-* Fases de Quest: (Só altere com convicção do que está fazendo)
-* Determinam a fase da quest do éden em que o bot se encontra.
+* 📈 Fases de Quest: (Determinam a fase da quest em que o bot se encontra)
 
-  - eden03 (0, 1, 2, 3, end)	- Variável inexistente = Inicia a quest.
+  - eden03 (0, 1, 2, 3, end)	- Variável inexistente = Iniciar a quest no npc.
   - eden05 (0, 1, 2, 3, end)	- 0 = Salvar na kafra da quest.
   - eden08 (0, 1, 2, 3, end)	- 1 = Checar e comprar de Asas de Mosquito e Poções Laranjas.
   - eden09 (0, 1, 2, 3, end)	- 2 = Realização da Quest.
