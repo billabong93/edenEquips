@@ -59,7 +59,7 @@ Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkor
 
   - O primeiro resgate de equipamentos só é feito no nível 7 porque esse é o nível mínimo do equipamento, evitando redundâncias.
   - No caso das classes principais, a quest de nível 60 só é feita após mudança para  2ª classe. A quest até pode ser feita pelas 1ªs classes principais, mas não receberão equipamentos após a conclusão até a mudança para 2ª classe.
-  - A maior parte das classes foi testada, e os equipamentos estão em sua maioria, se não todos,
+  - A maior parte das classes foi testada, e as armas estão em sua maioria, se não todas,
     nas posições corretas. (Opções extraídas de .csv)
   - Telesearch é fundamental para a conclusão dessas quests, não é possível desativá-lo.
   - Se seu bot não está pegando o aeroplano ou usando os teleportes, verifique routeweights.txt,
