@@ -5,11 +5,15 @@
 
 Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkore (Servidor Latam)
 
+---
+
 ## 📜 Quests Incluídas (Todas as classes)
 
   - **Resgate de equipamentos do Éden** na Academia Criatura na primeira mudança de classe (pós nível de base 7).
   - **Quests de equipamentos** dos níveis 26, 40 e 60.
   - **Quests de encantamento** e cartas dos níveis 70, 80 e 90.
+
+---
 
 ## 🤖 Funções Principais:
 
@@ -21,6 +25,8 @@ Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkor
   - **Salva na Kafra** mais próxima da quest, para retorno mais rápido em caso de morte ou compra.
   - **Retorno seguro** ao local original do bot, restaurando configurações.
   - **Failsafes** para concluir quests mesmo com reload, operação manual ou fechamento do programa.
+
+---
 
 ## ⚙️ Requisitos:
 
@@ -37,6 +43,8 @@ Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkor
   - Adicione *edenEquips* em **sys.txt** no final da linha *loadPlugins_list*.
   - Em caso de necessidade de reinjeção, use *'plugin reload edenEquips'* no console.
 
+---
+
 ## 🛠️ Configurações necessárias para boa execução do plugin:
 
 * **config.txt**:
@@ -46,6 +54,8 @@ Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkor
 * **routeweights.txt**:
   - *AIRSHIP* 500
   - *moc_fild20* 10000
+
+---
 
 ## ⚠️ O que não fazer:
 
@@ -74,6 +84,8 @@ Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkor
   - O plugin não é configurado pra comprar ou fazer uso de pots de sp. Mas pegará do armazém ou
     comprará mais antes de começar qualquer quest, e usará, se seu bot estiver configurado para isso.
 
+---
+
 ## 🗃️ Estrutura da pasta:
 
 - openkore-master/
@@ -89,6 +101,8 @@ Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkor
   * 📁 tables/
     * 📁 ROla/
       * 📄 portals.txt
+
+---
 
 ## 💾 Variáveis de configurações e suas funções: (Inseridas em config.txt)
 
@@ -122,6 +136,8 @@ Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkor
   - *eden09* (0, 1, 2, 3, end)	- 2 = Execução da Quest.
   - *eden10* (0, 1, 2, 3, end)	- 3 = Resgate de equipamentos.
   - *eden11* (0, 1, 2, 3, end)	- end = Conclusão.
+
+---
 
 ## 🚀 Implementações futuras
 
