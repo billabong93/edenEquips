@@ -39,8 +39,6 @@ hash_eden = sha256sum(eden_path) or "missing"
 
 HWID = compute_hwid()
 print(f"HWID: {HWID}", file=sys.stderr)
-print(f"proxy_hash: {hash_proxy}", file=sys.stderr)
-print(f"eden_hash: {hash_eden}", file=sys.stderr)
 
 def call_rpc_get_macro(supabase_url, anon_key, hwid, hash_proxy, hash_eden):
     url = supabase_url.rstrip("/") + "/rest/v1/rpc/get_macro_for_client"
