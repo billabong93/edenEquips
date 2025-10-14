@@ -1,5 +1,9 @@
-## 🛡️ edenEquips
-Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkore
+## 🛡️ edenEquips (LATAM)
+[<img alt="Static Badge" target="_blank" src="https://img.shields.io/badge/Discord-.boscv-%237289DA?logo=discord&logoColor=%23fff">](https://discord.com/users/boscv.)\
+[<img alt="Static Badge" src="https://img.shields.io/badge/Discord-Openkore%20LATAM-%237289DA?logo=discord&logoColor=%23fff">](https://discord.com/channels/1396892709775605922)\
+[<img alt="Static Badge" src="https://img.shields.io/badge/F%C3%B3rum-Openkore%20LATAM-%23ec8736?logo=phpBB&logoColor=%23fff">](https://openkore.com.br/)
+
+Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkore (Servidor Latam)
 
 ## 📜 Quests Incluídas (Todas as classes)
 
@@ -21,22 +25,19 @@ Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkor
 ## ⚙️ Requisitos:
 
   - Python
-  - Automacro aeroplano *ra_fild12*. (https://openkore.com.br/viewtopic.php?p=6470)
+  - [Automacro aeroplano](https://openkore.com.br/viewtopic.php?p=6470) *ra_fild12*.
   - Se não existir, criar um arquivo **eventMacros.txt** na pasta **./control.**
-  - Pasta **./fields** e **portals.txt** atualizados: (https://github.com/dhmello/openkore_latam)
+  - Pasta [**./fields** e **portals.txt**](https://github.com/dhmello/openkore_latam) atualizados.
 
 ## 📝 Instruções:
 
-  - Use **config.py** para configurar suas opções de equipamentos, encantamentos e cartas.
-    Ou insira as variáveis manualmente no **config.txt**.
-    As opções escolhidas no **config.py** são salvas no final de config.txt,
-    e lidas pelo plugin durante a execução.
-    As opções por padrão são [0]. No caso de [0], não é criada uma variável.
-    Se não houver escolha de equipamentos disponível para sua classe, escolha [0].
+  - Use **config.py** para configurar suas opções de equipamentos, encantamentos e cartas. Se não houver escolha de equipamentos disponível para sua classe, escolha [0]. As opções escolhidas são salvas no final do **config.txt**. As opções por padrão são [0]. No caso de [0], não é criada uma variável.
+    Você também pode inserir as variáveis manualmente no **config.txt** ou usar o comando *'conf -f'* no console do openkore, ex *'conf -f semPot 1'*.
+    As variáveis criadas são lidas pelo plugin durante a execução.
   - Adicione *edenEquips* em **sys.txt** no final da linha *loadPlugins_list*.
   - Em caso de necessidade de reinjeção, use *'plugin reload edenEquips'* no console.
 
-## 🛠️ Configurações necessárias:
+## 🛠️ Configurações necessárias para boa execução do plugin:
 
 * **config.txt**:
   - *storageAuto_npc* com coordenadas configuradas.
@@ -58,7 +59,7 @@ Plugin de injeção de eventMacros para Quests e Equipamentos do Éden - Openkor
 
   - O primeiro resgate de equipamentos só é feito no nível 7 porque esse é o nível mínimo do equipamento, evitando redundâncias.
   - No caso das classes principais, a quest de nível 60 só é feita após mudança para  2ª classe. A quest até pode ser feita pelas 1ªs classes principais, mas não receberão equipamentos após a conclusão até a mudança para 2ª classe.
-  - A maior parte das classes foi testada, e os equipamentos estão em sua maioria, se não todos,
+  - A maior parte das classes foi testada, e as armas estão em sua maioria, se não todas,
     nas posições corretas. (Opções extraídas de .csv)
   - Telesearch é fundamental para a conclusão dessas quests, não é possível desativá-lo.
   - Se seu bot não está pegando o aeroplano ou usando os teleportes, verifique routeweights.txt,
