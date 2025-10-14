@@ -36,6 +36,8 @@ HWID necessário para ativação.
   - Se não existir, criar um arquivo **eventMacros.txt** na pasta **./control.**
   - Pasta [**./fields** e **portals.txt**](https://github.com/dhmello/openkore_latam) atualizados.
 
+---
+
 ## 📝 Instruções:
 
   - Use **config.py** para configurar suas opções de equipamentos, encantamentos e cartas. Se não houver escolha de equipamentos disponível para sua classe, escolha [0]. As opções escolhidas são salvas no final do **config.txt**. As opções por padrão são [0]. No caso de [0], não é criada uma variável.
@@ -65,6 +67,8 @@ HWID necessário para ativação.
     de rollback por falha na execução de etapas do macro, ou a remoção do plugin.
   - **Não faça alterações** no **proxy.py** ou **edenEquips.pl**. O acesso é barrado pelo servidor
     em caso de qualquer modificação ou ausência dos arquivos.
+
+---
 
 ## 📢 Informações e avisos:
 
