@@ -1,7 +1,6 @@
 import sys, io, os, json, base64, hashlib, uuid
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
-from urllib.parse import quote_plus
 
 if len(sys.argv) != 3:
     print("Use: proxy.py <SUPABASE_URL> <ANON_KEY>", file=sys.stderr)
@@ -31,63 +30,6 @@ def compute_hwid():
     raw = mac_bytes + host.encode('utf-8')
     return hashlib.sha256(raw).hexdigest()
 
-def supabase_get(table, filters=None, select="*"):
-    base = f"{SUPABASE_URL}/rest/v1/{table}"
-    qs = []
-    if filters:
-        for k,v in filters.items():
-            qs.append(f"{quote_plus(k)}={quote_plus(v)}")
-    qs.append("select=" + quote_plus(select))
-    url = base + "?" + "&".join(qs)
-    req = Request(url, headers={
-        "apikey": ANON_KEY,
-        "Authorization": "Bearer " + ANON_KEY,
-        "Accept": "application/json"
-    })
-    try:
-        with urlopen(req, timeout=20) as resp:
-            body = resp.read().decode('utf-8')
-            return json.loads(body)
-    except HTTPError as e:
-        print("HTTPError supabase_get: {} {}".format(e.code, e.reason), file=sys.stderr)
-        try:
-            print(e.read().decode('utf-8'), file=sys.stderr)
-        except:
-            pass
-        return None
-    except URLError as e:
-        print("URLError supabase_get: {}".format(e), file=sys.stderr)
-        return None
-    except Exception as e:
-        print("ERR supabase_get: {}".format(e), file=sys.stderr)
-        return None
-
-def supabase_post(table, payload):
-    url = f"{SUPABASE_URL}/rest/v1/{table}"
-    headers = {
-        "apikey": ANON_KEY,
-        "Authorization": "Bearer " + ANON_KEY,
-        "Content-Type": "application/json",
-        "Prefer": "return=representation"
-    }
-    req = Request(url, data=json.dumps(payload).encode('utf-8'), headers=headers, method="POST")
-    try:
-        with urlopen(req, timeout=20) as resp:
-            return json.loads(resp.read().decode('utf-8'))
-    except HTTPError as e:
-        print("HTTPError supabase_post: {} {}".format(e.code, e.reason), file=sys.stderr)
-        try:
-            print(e.read().decode('utf-8'), file=sys.stderr)
-        except:
-            pass
-        return None
-    except URLError as e:
-        print("URLError supabase_post: {}".format(e), file=sys.stderr)
-        return None
-    except Exception as e:
-        print("ERR supabase_post: {}".format(e), file=sys.stderr)
-        return None
-
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 proxy_path = os.path.join(BASE_DIR, "proxy.py")
 eden_path = os.path.join(BASE_DIR, "edenEquips.pl")
@@ -100,51 +42,48 @@ print(f"HWID: {HWID}", file=sys.stderr)
 print(f"proxy_hash: {hash_proxy}", file=sys.stderr)
 print(f"eden_hash: {hash_eden}", file=sys.stderr)
 
-res = supabase_get("clients", filters={"hwid": "eq." + HWID})
-if res is None:
-    print("ERR: failed to query DB", file=sys.stderr)
+def call_rpc_get_macro(supabase_url, anon_key, hwid, hash_proxy, hash_eden):
+    url = supabase_url.rstrip("/") + "/rest/v1/rpc/get_macro_for_client"
+    headers = {
+        "apikey": anon_key,
+        "Authorization": "Bearer " + anon_key,
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+    }
+    payload = {"p_hwid": hwid, "p_proxy_hash": hash_proxy, "p_eden_hash": hash_eden}
+    data = json.dumps(payload).encode("utf-8")
+    req = Request(url, data=data, headers=headers, method="POST")
+    try:
+        with urlopen(req, timeout=20) as resp:
+            body = resp.read().decode('utf-8')
+            j = json.loads(body)
+            return j
+    except HTTPError as e:
+        try:
+            body = e.read().decode('utf-8')
+            print("HTTPError RPC:", e.code, body, file=sys.stderr)
+        except:
+            print("HTTPError RPC:", e.code, file=sys.stderr)
+        return {"error": f"http_{e.code}"}
+    except URLError as e:
+        print("URLError RPC:", e, file=sys.stderr)
+        return {"error": "url_err"}
+    except Exception as e:
+        print("ERR RPC:", e, file=sys.stderr)
+        return {"error": "err"}
+
+res = call_rpc_get_macro(SUPABASE_URL, ANON_KEY, HWID, hash_proxy, hash_eden)
+if not res:
+    print("ERR: empty rpc response", file=sys.stderr)
     sys.exit(5)
 
-if len(res) == 0:
-    print("HWID not authorized. Registering inactive.", file=sys.stderr)
-    payload = {"hwid": HWID, "active": False}
-    ins = supabase_post("clients", payload)
-    if ins is None:
-        print("ERR: failed to register HWID", file=sys.stderr)
-        sys.exit(5)
+if res.get("error"):
+    print("ERR from rpc:", res["error"], file=sys.stderr)
     sys.exit(3)
 
-client_active = res[0].get("active", False)
-if not client_active:
-    print("HWID found but not active.", file=sys.stderr)
-    sys.exit(3)
-
-file_hashes = supabase_get("file_hashes", select="filename,sha256")
-if file_hashes is None:
-    print("ERR: failed to query file_hashes", file=sys.stderr)
-    sys.exit(5)
-
-hash_ok = True
-for fname, fhash in [("proxy.py", hash_proxy), ("edenEquips.pl", hash_eden)]:
-    matching = [r for r in file_hashes if r["filename"] == fname]
-    if not matching or matching[0]["sha256"] != fhash:
-        print(f"{fname} not authorized or modified", file=sys.stderr)
-        hash_ok = False
-
-if not hash_ok:
-    sys.exit(3)
-
-mres = supabase_get("macros", filters={"name":"eq.eventMacros"}, select="content_base64")
-if mres is None:
-    print("ERR: failed to query macros", file=sys.stderr)
-    sys.exit(5)
-if not mres or len(mres) == 0:
-    print("ERR: macro not found", file=sys.stderr)
-    sys.exit(6)
-
-b64_text = mres[0].get("content_base64")
+b64_text = res.get("content_base64")
 if not b64_text:
-    print("ERR: macro content empty", file=sys.stderr)
+    print("ERR: no content", file=sys.stderr)
     sys.exit(6)
 
 try:
