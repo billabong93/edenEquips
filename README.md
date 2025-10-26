@@ -89,6 +89,7 @@ HWID necessário para ativação.
   - A injeção não sobrescreverá seu **eventMacros.txt**. De qualquer forma, sempre bom manter um backup.
   - O plugin não é configurado pra comprar ou fazer uso de pots de sp. Mas pegará do armazém ou
     comprará mais antes de começar qualquer quest, e usará, se seu bot estiver configurado para isso.
+  - O eventMacros injetado está sempre atualizado.
 
 ---
 
