@@ -1,4 +1,4 @@
-## 🛡️ edenEquips (LATAM)
+## 🛡️ edenEquips v1.1 (LATAM)
 [<img alt="Static Badge" target="_blank" src="https://img.shields.io/badge/Discord-.boscv-%237289DA?logo=discord&logoColor=%23fff">](https://discord.com/users/boscv.)\
 [<img alt="Static Badge" src="https://img.shields.io/badge/Discord-Openkore%20LATAM-%237289DA?logo=discord&logoColor=%23fff">](https://discord.com/channels/1396892709775605922)\
 [<img alt="Static Badge" src="https://img.shields.io/badge/F%C3%B3rum-Openkore%20LATAM-%23ec8736?logo=phpBB&logoColor=%23fff">](https://openkore.com.br/)
@@ -26,6 +26,7 @@ HWID necessário para ativação.
   - **Salva na Kafra** mais próxima da quest, para retorno mais rápido em caso de morte ou compra.
   - **Retorno seguro** ao local original do bot, restaurando configurações.
   - **Failsafes** para concluir quests mesmo com reload, operação manual ou fechamento do programa.
+  - **Compatível com profiles**, pra você que gosta de manter as coisas organizadas.
 
 ---
 
