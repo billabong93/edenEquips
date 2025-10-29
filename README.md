@@ -19,6 +19,7 @@ HWID necessário para ativação.
 ## 🤖 Funções Principais:
 
   - **Configuração personalizada** de equipamentos, encantamentos e cartas.
+  - **Escolha o nível** em que quer que o personagem inicie as quests.
   - **Equipa automáticamente** itens recebidos após as quests.
   - **Teleport avançado** (*routeTeleport* e *teleportAuto_search*) para maior eficiência e sobrevivência.
   - **Teleport away** se mob se aproximar do bot sentado durante o *teleportAuto_search*.
@@ -26,7 +27,6 @@ HWID necessário para ativação.
   - **Salva na Kafra** mais próxima da quest, para retorno mais rápido em caso de morte ou compra.
   - **Retorno seguro** ao local original do bot, restaurando configurações.
   - **Failsafes** para concluir quests mesmo com reload, operação manual ou fechamento do programa.
-  - **Escolha o nível** em que quer que o personagem inicie as quests.
   - **Compatível com profiles**, pra você que gosta de manter as coisas organizadas.
 
 ---
