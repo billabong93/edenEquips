@@ -1,4 +1,4 @@
-## 🛡️ edenEquips v1.1 (LATAM)
+## 🛡️ edenEquips v1.2 (LATAM)
 [<img alt="Static Badge" target="_blank" src="https://img.shields.io/badge/Discord-.boscv-%237289DA?logo=discord&logoColor=%23fff">](https://discord.com/users/boscv.)\
 [<img alt="Static Badge" src="https://img.shields.io/badge/Discord-Openkore%20LATAM-%237289DA?logo=discord&logoColor=%23fff">](https://discord.com/channels/1396892709775605922)\
 [<img alt="Static Badge" src="https://img.shields.io/badge/F%C3%B3rum-Openkore%20LATAM-%23ec8736?logo=phpBB&logoColor=%23fff">](https://openkore.com.br/)
@@ -26,6 +26,7 @@ HWID necessário para ativação.
   - **Salva na Kafra** mais próxima da quest, para retorno mais rápido em caso de morte ou compra.
   - **Retorno seguro** ao local original do bot, restaurando configurações.
   - **Failsafes** para concluir quests mesmo com reload, operação manual ou fechamento do programa.
+  - **Escolha o nível** em que quer que o personagem inicie as quests.
   - **Compatível com profiles**, pra você que gosta de manter as coisas organizadas.
 
 ---
@@ -113,20 +114,29 @@ HWID necessário para ativação.
 
 ## 💾 Variáveis de configurações e suas funções: (Inseridas em config.txt)
 
+* ⚡ Nível de inicio das quests:
+
+  - *lvlQuest03* (26 ~ 32) - Determina o nível em que o personagem irá começar a Quest de nível 26.
+  - *lvlQuest05* (40 ~ 49) - Determina o nível em que o personagem irá começar a Quest de nível 40.
+  - *lvlQuest08* (60 ~ 69) - Determina o nível em que o personagem irá começar a Quest de nível 60.
+  - *lvlQuest09* (70 ~ 79) - Determina o nível em que o personagem irá começar a Quest de nível 70.
+  - *lvlQuest10* (80 ~ 89) - Determina o nível em que o personagem irá começar a Quest de nível 80.
+  - *lvlQuest11* (90 ~ 99) - Determina o nível em que o personagem irá começar a Quest de nível 90.
+
 * ⚔️ Equipamentos:
 
-  - *eq03* (0, 1) - Determina a opção de equipamentos da Quest nível 26.
+  - *armaI* (0, 1) - Determina a opção de equipamentos da Quest nível 26.
     Opções para: Espadachim, Noviço e Mercador.
-  - *eq05* (0, 1) - Determina a opção de equipamentos da Quest nível 40.
+  - *armaII* (0, 1) - Determina a opção de equipamentos da Quest nível 40.
     Opções para: Espadachim, Cavaleiro, Templário, Noviço, Sacerdote, Monge, Mercador,
     Ferreiro, Alquimista e Espiritualista.
-  - *eq08* (0, 1, 2) - Determina a opção de equipamentos da Quest nível 60.
+  - *armaIII* (0, 1, 2) - Determina a opção de equipamentos da Quest nível 60.
     Opções para: Cavaleiro, Templário, Sacerdote, Monge, Sábio, Bardo, 
     Odalisca, Ferreiro, Alquimista, Mercenário, Espiritualista e Ninja.
 
 * 💎 Encantamentos:
 
-  - *enc* (0, 1) - Determina se o encantamento de nível 70 vai ser ATQ ou ATQM.
+  - *encant* (0, 1) - Determina se o encantamento de nível 70 vai ser ATQ ou ATQM.
   - *carta* (0, 1, 2, 3, 4, 5) - Tipo de carta +DMG/MDMG ou fator de cura no encantamento nível 80.
 
 * 🧪 Utilizáveis:
