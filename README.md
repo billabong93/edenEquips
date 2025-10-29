@@ -80,7 +80,7 @@ HWID necessário para ativação.
     nas posições corretas. (Opções extraídas de .csv)
   - Telesearch é fundamental para a conclusão dessas quests, não é possível desativá-lo.
   - Se seu bot não está pegando o aeroplano ou usando os teleportes, verifique routeweights.txt,
-    e *route_maxWarpFee* em config.txt.
+    e *route_maxWarpFee* em **config.txt**.
   - As Asas de Mosquito só devem ser desabilitadas se houver algum outro item equivalente
     em *teleportAuto_item1*.
   - Apesar de interceptado, o bot continuará usando qualquer skill ou item configurado no
@@ -91,6 +91,7 @@ HWID necessário para ativação.
   - O plugin não é configurado pra comprar ou fazer uso de pots de sp. Mas pegará do armazém ou
     comprará mais antes de começar qualquer quest, e usará, se seu bot estiver configurado para isso.
   - O eventMacros injetado está sempre atualizado.
+  - O **config.py** salva as configurações apenas em **control/config.txt**.
 
 ---
 
