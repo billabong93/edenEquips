@@ -29,9 +29,14 @@ if not os.path.isdir(CONTROL_DIR):
 # ==============================
 options = {
     "lvlQuest03": {
-        "desc": "QUEST ARMA DO ÉDEN I - LVL [26-32] \n\nEscolha o level em que seu personagem vai começar a quest.\n26 = (padrão)",
+        "desc": "QUEST ARMA DO ÉDEN I - LVL [26-32] \n\nEscolha o level em que seu personagem vai começar a quest.\nUse exclusivamente lvlQuest03 ou lvlQuest04.\n26 = (padrão)",
         "default": "26",
         "allowed": {"26", "27", "28", "29", "30", "31", "32"}
+    },
+    "lvlQuest04": {
+        "desc": "QUEST ARMA DO ÉDEN I - LVL [33-39] \n\nEscolha o level em que seu personagem vai começar a quest.\nUse exclusivamente lvlQuest03 ou lvlQuest04.\n33 = (padrão)",
+        "default": "33",
+        "allowed": {"33", "34", "35", "36", "37", "38", "39"}
     },
     "armaI": {
         "desc": "QUEST ARMA DO ÉDEN I - Armas para as classes:\nEspadachim, Noviço, Mercador.\n(https://browiki.org/wiki/Equipamentos_do_Éden#Armas) \n\nOpções: \n0 = Sabre / Cetro (padrão)\n1 = Espada / Maça",
