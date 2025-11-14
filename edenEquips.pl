@@ -13,7 +13,7 @@ use Encode qw(decode);
 use Globals qw($char);
 use Time::HiRes qw(time);
 
-Plugins::register('edenEquips', \&onUnload);
+Plugins::register('edenEquips', 'edenEquips HWID guard', \&onUnload);
 
 my $plugin_dir  = dirname(abs_path(__FILE__));
 my $supabase_url = "https://bnjjwtbjanjkledoiwem.supabase.co";
