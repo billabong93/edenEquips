@@ -26,7 +26,7 @@ my $next_check_time;
 
 Plugins::addHooks(
     ['in_game', \&maybe_inject_macros],
-    ['AI_post', \&periodic_authorization_check],
+    ['mainLoop_post', \&periodic_authorization_check],
 );
 
 maybe_inject_macros();
@@ -154,6 +154,8 @@ sub periodic_authorization_check {
     return if $now < $next_check_time;
 
     schedule_next_check();
+
+    message "[edenEquips] Executando verificação periódica de HWID...\n";
 
     my ($res, undef) = fetch_macro_payload(1);
 
