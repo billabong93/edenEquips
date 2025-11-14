@@ -25,7 +25,7 @@ my $auth_status  = 'unknown';
 my $check_interval = 3600; # seconds
 my $next_check_time;
 
-Plugins::addHooks(
+my $hooks = Plugins::addHooks(
     ['in_game', \&maybe_inject_macros],
     ['mainLoop_post', \&periodic_authorization_check],
 );
@@ -45,7 +45,7 @@ sub maybe_inject_macros {
 
     $injection_in_progress = 1;
 
-    message "Carregando $macro_display..\n";
+    message "[edenEquips] Preparando $macro_display para injeção...\n";
 
     if (update_proxy_and_inject($macro_file)) {
         $injection_done = 1;
@@ -120,6 +120,16 @@ sub update_proxy_and_inject {
 }
 
 sub onUnload {
+    if ($hooks) {
+        Plugins::delHooks($hooks);
+        undef $hooks;
+    }
+
+    $injection_done        = 0;
+    $injection_in_progress = 0;
+    $auth_status           = 'unknown';
+    undef $next_check_time;
+
     message "[edenEquips] Plugin unloaded.\n";
 }
 
