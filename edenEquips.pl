@@ -20,6 +20,7 @@ my $supabase_url = "https://bnjjwtbjanjkledoiwem.supabase.co";
 my $anon_key     = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJuamp3dGJqYW5qa2xlZG9pd2VtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAxOTk4MzAsImV4cCI6MjA3NTc3NTgzMH0.N3wNjGbKM8QCZ2v3EbXksgawmwdG5Vo1AxQUE_81K10"; # ajuste se necessário
 my $python_cmd   = "python3";
 my $injection_done;
+my $injection_in_progress;
 my $auth_status  = 'unknown';
 my $check_interval = 3600; # seconds
 my $next_check_time;
@@ -32,7 +33,7 @@ Plugins::addHooks(
 maybe_inject_macros();
 
 sub maybe_inject_macros {
-    return if $injection_done;
+    return if $injection_done || $injection_in_progress;
     return unless $char && $char->{charID};
 
     my ($macro_file, $macro_display) = resolve_macro_destination();
@@ -42,6 +43,8 @@ sub maybe_inject_macros {
         return;
     }
 
+    $injection_in_progress = 1;
+
     message "Carregando $macro_display..\n";
 
     if (update_proxy_and_inject($macro_file)) {
@@ -49,6 +52,8 @@ sub maybe_inject_macros {
         $auth_status    = 'allowed';
         schedule_next_check();
     }
+
+    $injection_in_progress = 0;
 }
 
 sub schedule_next_check {
@@ -166,8 +171,9 @@ sub periodic_authorization_check {
         if ($injection_done) {
             Commands::run("reload eventMacros");
         }
-        $injection_done = 0;
-        $auth_status    = 'denied';
+        $injection_in_progress = 0;
+        $injection_done        = 0;
+        $auth_status           = 'denied';
         return;
     }
 
