@@ -74,6 +74,7 @@ HWID necessário para ativação.
 
 ## 📢 Informações e avisos:
 
+  - O eventMacros injetado é atualizado diariamente, qualquer bug ou erro, favor informar.
   - O primeiro resgate de equipamentos só é feito no nível 7 porque esse é o nível mínimo do equipamento, evitando redundâncias.
   - No caso das classes principais, a quest de nível 60 só é feita após mudança para  2ª classe. A quest até pode ser feita pelas 1ªs classes principais, mas não receberão equipamentos após a conclusão até a mudança para 2ª classe.
   - A maior parte das classes foi testada, e as armas estão em sua maioria, se não todas,
@@ -90,7 +91,6 @@ HWID necessário para ativação.
   - A injeção não sobrescreverá seu **eventMacros.txt**. De qualquer forma, sempre bom manter um backup.
   - O plugin não é configurado pra comprar ou fazer uso de pots de sp. Mas pegará do armazém ou
     comprará mais antes de começar qualquer quest, e usará, se seu bot estiver configurado para isso.
-  - O eventMacros injetado está sempre atualizado.
   - O **config.py** salva as configurações apenas em **control/config.txt**.
 
 ---
