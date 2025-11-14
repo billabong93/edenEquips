@@ -21,9 +21,9 @@ my $anon_key     = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSI
 my $python_cmd   = "python3";
 my $injection_done;
 my $injection_in_progress;
-my $auth_status  = 'unknown';
-my $check_interval = 3600; # seconds
-my $next_check_time;
+my $auth_status       = 'unknown';
+my $check_interval    = 3600; # seconds
+my $last_check_time   = 0;
 
 my $hooks = Plugins::addHooks(
     ['in_game', \&maybe_inject_macros],
@@ -50,14 +50,10 @@ sub maybe_inject_macros {
     if (update_proxy_and_inject($macro_file)) {
         $injection_done = 1;
         $auth_status    = 'allowed';
-        schedule_next_check();
+        $last_check_time = time;
     }
 
     $injection_in_progress = 0;
-}
-
-sub schedule_next_check {
-    $next_check_time = time + $check_interval;
 }
 
 sub resolve_macro_destination {
@@ -128,7 +124,7 @@ sub onUnload {
     $injection_done        = 0;
     $injection_in_progress = 0;
     $auth_status           = 'unknown';
-    undef $next_check_time;
+    $last_check_time       = 0;
 
     message "[edenEquips] Plugin unloaded.\n";
 }
@@ -161,14 +157,14 @@ sub periodic_authorization_check {
     return unless $char && $char->{charID};
 
     my $now = time;
-    if (!$next_check_time) {
-        schedule_next_check();
+    if (!$last_check_time) {
+        $last_check_time = $now;
         return;
     }
 
-    return if $now < $next_check_time;
+    return if ($now - $last_check_time) < $check_interval;
 
-    schedule_next_check();
+    $last_check_time = $now;
 
     message "[edenEquips] Executando verificação periódica de HWID...\n";
 
