@@ -64,7 +64,7 @@ HWID necessário para ativação.
 
 ## ⚠️ O que não fazer:
 
-  - *'reload eventMacros'* durante a execução do plugin.
+  - *'reload eventMacros'*, *'reload all'* durante a execução do plugin.
   - **Jamais apague as variáveis** criadas pelo/para o plugin em **config.txt**, salvo necessidade
     de rollback por falha na execução de etapas do macro, ou a remoção do plugin.
   - **Não faça alterações** no **proxy.py** ou **edenEquips.pl**. O acesso é barrado pelo servidor
