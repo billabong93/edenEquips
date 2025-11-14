@@ -11,23 +11,27 @@ use File::Basename qw(dirname);
 use Cwd qw(getcwd abs_path);
 use Encode qw(decode);
 use Globals qw($char);
+use Time::HiRes qw(time);
 
-Plugins::register('edenEquips', \&onUnload);
+Plugins::register('edenEquips', 'edenEquips HWID guard', \&onUnload);
 
 my $plugin_dir  = dirname(abs_path(__FILE__));
 my $supabase_url = "https://bnjjwtbjanjkledoiwem.supabase.co";
 my $anon_key     = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJuamp3dGJqYW5qa2xlZG9pd2VtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAxOTk4MzAsImV4cCI6MjA3NTc3NTgzMH0.N3wNjGbKM8QCZ2v3EbXksgawmwdG5Vo1AxQUE_81K10"; # ajuste se necessário
 my $python_cmd   = "python3";
 my $injection_done;
+my $injection_in_progress;
+my $auth_status       = 'unknown';
+my $check_interval    = 3600; # seconds
+my $last_check_time   = 0;
+my $plugin_active     = 1;
+my ($in_game_hook, $loop_hook);
 
-Plugins::addHooks(
-    ['in_game', \&maybe_inject_macros],
-);
-
+register_hooks();
 maybe_inject_macros();
 
 sub maybe_inject_macros {
-    return if $injection_done;
+    return if $injection_done || $injection_in_progress;
     return unless $char && $char->{charID};
 
     my ($macro_file, $macro_display) = resolve_macro_destination();
@@ -37,9 +41,17 @@ sub maybe_inject_macros {
         return;
     }
 
-    message "Carregando $macro_display..\n";
+    $injection_in_progress = 1;
 
-    $injection_done = 1 if update_proxy_and_inject($macro_file);
+    message "[edenEquips] Preparando $macro_display para injeção...\n";
+
+    if (update_proxy_and_inject($macro_file)) {
+        $injection_done = 1;
+        $auth_status    = 'allowed';
+        $last_check_time = time;
+    }
+
+    $injection_in_progress = 0;
 }
 
 sub resolve_macro_destination {
@@ -61,23 +73,9 @@ sub resolve_macro_destination {
 
 sub update_proxy_and_inject {
     my ($macro_file) = @_;
-    my $py_script = File::Spec->catfile($plugin_dir, "proxy.py");
-    my $cmd = qq("$python_cmd" "$py_script" "$supabase_url" "$anon_key");
+    my ($res, $decoded) = fetch_macro_payload();
 
-    message "[edenEquips] Running (stdout) ...\n";
-    my $output = `$cmd 2>&1`;
-    my $res = $? >> 8;
-
-    $output = eval { decode("UTF-8", $output) } || $output;
-
-    if ($res != 0) {
-        warning "[edenEquips] HWID access denied. stderr:\n$output\n";
-        warning "[edenEquips] Contact and send HWID for activation.";
-        warning "[DISCORD] https://discord.com/users/boscv.";
-        return 0;
-    }
-
-    my $decoded = $output;
+    return 0 if $res != 0;
 
     if ($decoded !~ /automacro|timeout|call\s*\{/) {
         warning "[edenEquips] Doesn't look like eventMmacro — aborting. Preview: "
@@ -115,8 +113,99 @@ sub update_proxy_and_inject {
     return 1;
 }
 
+sub register_hooks {
+    unregister_hooks();
+    $plugin_active = 1;
+    $in_game_hook = Plugins::addHook('in_game', \&maybe_inject_macros);
+    $loop_hook    = Plugins::addHook('mainLoop_post', \&periodic_authorization_check);
+}
+
+sub unregister_hooks {
+    if ($in_game_hook) {
+        Plugins::delHook($in_game_hook);
+        undef $in_game_hook;
+    }
+
+    if ($loop_hook) {
+        Plugins::delHook($loop_hook);
+        undef $loop_hook;
+    }
+}
+
 sub onUnload {
+    $plugin_active = 0;
+    unregister_hooks();
+
+    $injection_done        = 0;
+    $injection_in_progress = 0;
+    $auth_status           = 'unknown';
+    $last_check_time       = 0;
+
     message "[edenEquips] Plugin unloaded.\n";
+}
+
+sub fetch_macro_payload {
+    my ($quiet) = @_;
+    my $py_script = File::Spec->catfile($plugin_dir, "proxy.py");
+    my $cmd = qq("$python_cmd" "$py_script" "$supabase_url" "$anon_key");
+
+    message "[edenEquips] Running (stdout) ...\n" unless $quiet;
+
+    my $output = `$cmd 2>&1`;
+    my $res = $? >> 8;
+
+    $output = eval { decode("UTF-8", $output) } || $output;
+
+    if ($res != 0) {
+        unless ($quiet) {
+            warning "[edenEquips] HWID access denied. stderr:\n$output\n";
+            warning "[edenEquips] Contact and send HWID for activation.";
+            warning "[DISCORD] https://discord.com/users/boscv.";
+        }
+        return ($res, undef);
+    }
+
+    return (0, $output);
+}
+
+sub periodic_authorization_check {
+    return unless $plugin_active;
+    return unless $char && $char->{charID};
+
+    my $now = time;
+    if (!$last_check_time) {
+        $last_check_time = $now;
+        return;
+    }
+
+    return if ($now - $last_check_time) < $check_interval;
+
+    $last_check_time = $now;
+
+    message "[edenEquips] Executando verificação periódica de HWID...\n";
+
+    my ($res, undef) = fetch_macro_payload(1);
+
+    if ($res != 0) {
+        if ($auth_status ne 'denied') {
+            warning "[edenEquips] HWID access revoked. Reloading eventMacros.\n";
+        }
+        if ($injection_done) {
+            Commands::run("reload eventMacros");
+        }
+        $injection_in_progress = 0;
+        $injection_done        = 0;
+        $auth_status           = 'denied';
+        return;
+    }
+
+    if ($auth_status eq 'denied') {
+        message "[edenEquips] HWID access restored. Reapplying macros if needed.\n";
+    }
+
+    $auth_status = 'allowed';
+
+    maybe_inject_macros() unless $injection_done;
 }
 
 1;
