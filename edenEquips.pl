@@ -24,12 +24,10 @@ my $injection_in_progress;
 my $auth_status       = 'unknown';
 my $check_interval    = 3600; # seconds
 my $last_check_time   = 0;
+my $plugin_active     = 1;
+my ($in_game_hook, $loop_hook);
 
-my $hooks = Plugins::addHooks(
-    ['in_game', \&maybe_inject_macros],
-    ['mainLoop_post', \&periodic_authorization_check],
-);
-
+register_hooks();
 maybe_inject_macros();
 
 sub maybe_inject_macros {
@@ -115,11 +113,28 @@ sub update_proxy_and_inject {
     return 1;
 }
 
-sub onUnload {
-    if ($hooks) {
-        Plugins::delHooks($hooks);
-        undef $hooks;
+sub register_hooks {
+    unregister_hooks();
+    $plugin_active = 1;
+    $in_game_hook = Plugins::addHook('in_game', \&maybe_inject_macros);
+    $loop_hook    = Plugins::addHook('mainLoop_post', \&periodic_authorization_check);
+}
+
+sub unregister_hooks {
+    if ($in_game_hook) {
+        Plugins::delHook($in_game_hook);
+        undef $in_game_hook;
     }
+
+    if ($loop_hook) {
+        Plugins::delHook($loop_hook);
+        undef $loop_hook;
+    }
+}
+
+sub onUnload {
+    $plugin_active = 0;
+    unregister_hooks();
 
     $injection_done        = 0;
     $injection_in_progress = 0;
@@ -154,6 +169,7 @@ sub fetch_macro_payload {
 }
 
 sub periodic_authorization_check {
+    return unless $plugin_active;
     return unless $char && $char->{charID};
 
     my $now = time;
