@@ -11,8 +11,8 @@ HWID necessário para ativação.
 ## 📜 Quests Incluídas (Todas as classes)
 
   - **Resgate de equipamentos do Éden** na Academia Criatura na primeira mudança de classe (pós nível de base 7).
-  - **Quests de equipamentos** dos níveis 26, 33, 40 e 60.
-  - **Quests de encantamento** e cartas dos níveis 70, 80 e 90.
+  - **Quests da Instrutora Boya** dos níveis 26, 33, 40 e 75.
+  - **Quests do Instrutor Ur** dos níveis 60, 70, 80 e 90.
 
 ---
 
@@ -100,6 +100,7 @@ HWID necessário para ativação.
 - openkore-master/
   * 📁 control/
     * 📄 eventMacros.txt
+    * 📄 sys.txt
   * 📁 fields/
   * 📁 plugins/
     * 📁 edenEquips/
@@ -117,13 +118,14 @@ HWID necessário para ativação.
 
 * ⚡ Nível de inicio das quests:
 
-  - *lvlQuest03* (26 ~ 32) - Determina o nível em que o personagem irá começar a Quest de nível 26.
-  - *lvlQuest04* (33 ~ 39) - Determina o nível em que o personagem irá começar a Quest de nível 33.
-  - *lvlQuest05* (40 ~ 49) - Determina o nível em que o personagem irá começar a Quest de nível 40.
-  - *lvlQuest08* (60 ~ 69) - Determina o nível em que o personagem irá começar a Quest de nível 60.
-  - *lvlQuest09* (70 ~ 79) - Determina o nível em que o personagem irá começar a Quest de nível 70.
-  - *lvlQuest10* (80 ~ 89) - Determina o nível em que o personagem irá começar a Quest de nível 80.
-  - *lvlQuest11* (90 ~ 99) - Determina o nível em que o personagem irá começar a Quest de nível 90.
+  - *lvlQuest03* (26 ~ 32) - Determina o nível em que o personagem irá começar a Quest da Instrutora Boya de nível 26.
+  - *lvlQuest04* (33 ~ 39) - Determina o nível em que o personagem irá começar a Quest da Instrutora Boya de nível 33.
+  - *lvlQuest05* (40 ~ 49) - Determina o nível em que o personagem irá começar a Quest da Instrutora Boya de nível 40.
+  - *lvlQuest07* (75 ~ 99) - Determina o nível em que o personagem irá começar a Quest da Instrutora Boya de nível 75.
+  - *lvlQuest08* (60 ~ 69) - Determina o nível em que o personagem irá começar a Quest do Instrutor Ur de nível 60.
+  - *lvlQuest09* (70 ~ 79) - Determina o nível em que o personagem irá começar a Quest do Instrutor Ur de nível 70.
+  - *lvlQuest10* (80 ~ 89) - Determina o nível em que o personagem irá começar a Quest do Instrutor Ur de nível 80.
+  - *lvlQuest11* (90 ~ 99) - Determina o nível em que o personagem irá começar a Quest do Instrutor Ur de nível 90.
 
 * ⚔️ Equipamentos:
 
@@ -152,14 +154,14 @@ HWID necessário para ativação.
   - *eden03* (0, 1, 2, 3, end)	- Variável inexistente = Iniciar a quest no npc.
   - *eden04* (0, 1, 2, 3, end)	- 0 = Salvar na kafra da quest.
   - *eden05* (0, 1, 2, 3, end)	- 1 = Checar e comprar mantimentos.
-  - *eden08* (0, 1, 2, 3, end)	- 2 = Execução da Quest.
-  - *eden09* (0, 1, 2, 3, end)	- 3 = Resgate de equipamentos.
-  - *eden10* (0, 1, 2, 3, end)	- 4 = Restaurar configurações.
-  - *eden11* (0, 1, 2, 3, end)	- end = Conclusão.
-
+  - *eden07* (0, 1, 2, 3, end)	- 2 = Execução da Quest.
+  - *eden08* (0, 1, 2, 3, end)	- 3 = Resgate de equipamentos.
+  - *eden09* (0, 1, 2, 3, end)	- 4 = Restaurar configurações.
+  - *eden10* (0, 1, 2, 3, end)	- end = Conclusão.
+  - *eden11* (0, 1, 2, 3, end)
 ---
 
 ## 🚀 Implementações futuras
 
-* Quests do Éden faltantes, com opções para preferência do usuário.
+* Quests do Éden faltantes dos níveis 12, 20 e 50.
 * Quests diárias e equipamentos 100+.
