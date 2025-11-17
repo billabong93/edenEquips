@@ -116,50 +116,76 @@ HWID necessário para ativação.
 
 ## 💾 Variáveis de configurações e suas funções: (Inseridas em config.txt)
 
-* ⚡ Nível de inicio das quests:
+### ⚡ Nível de inicio das quests:
 
-  - *lvlQuest03* (26 ~ 32) ---- Determina o nível em que o personagem irá começar a Quest da Instrutora Boya de nível 26.
-  - *lvlQuest04* (33 ~ 39) ---- Determina o nível em que o personagem irá começar a Quest da Instrutora Boya de nível 33.
-  - *lvlQuest05* (40 ~ 49) ---- Determina o nível em que o personagem irá começar a Quest da Instrutora Boya de nível 40.
-  - *lvlQuest07* (75 ~ 99) ---- Determina o nível em que o personagem irá começar a Quest da Instrutora Boya de nível 75.
-  - *lvlQuest08* (60 ~ 69) ---- Determina o nível em que o personagem irá começar a Quest do Instrutor Ur de nível 60.
-  - *lvlQuest09* (70 ~ 79) ---- Determina o nível em que o personagem irá começar a Quest do Instrutor Ur de nível 70.
-  - *lvlQuest10* (80 ~ 89) ---- Determina o nível em que o personagem irá começar a Quest do Instrutor Ur de nível 80.
-  - *lvlQuest11* (90 ~ 99) ---- Determina o nível em que o personagem irá começar a Quest do Instrutor Ur de nível 90.
+  - **lvlQuest03 (26 ~ 32)** - Determina o nível em que o personagem irá começar a Quest da Instrutora Boya de nível 26.
+  - **lvlQuest04 (33 ~ 39)** - Determina o nível em que o personagem irá começar a Quest da Instrutora Boya de nível 33.
+  - **lvlQuest05 (40 ~ 49)** - Determina o nível em que o personagem irá começar a Quest da Instrutora Boya de nível 40.
+  - **lvlQuest07 (75 ~ 99)** - Determina o nível em que o personagem irá começar a Quest da Instrutora Boya de nível 75.
+  - **lvlQuest08 (60 ~ 69)** - Determina o nível em que o personagem irá começar a Quest do Instrutor Ur de nível 60.
+  - **lvlQuest09 (70 ~ 79)** - Determina o nível em que o personagem irá começar a Quest do Instrutor Ur de nível 70.
+  - **lvlQuest10 (80 ~ 89)** - Determina o nível em que o personagem irá começar a Quest do Instrutor Ur de nível 80.
+  - **lvlQuest11 (90 ~ 99)** - Determina o nível em que o personagem irá começar a Quest do Instrutor Ur de nível 90.
 
-* ⚔️ Equipamentos:
+### ⚔️ Equipamentos:
 
-  - *armaI* (0, 1) - Determina a opção de equipamentos da Quest nível 26.
+  - **armaI (0, 1)** - Determina a opção de equipamentos da Quest nível 26.
     Opções para: Espadachim, Noviço e Mercador.
-  - *armaII* (0, 1) - Determina a opção de equipamentos da Quest nível 40.
+  - **armaII (0, 1)** - Determina a opção de equipamentos da Quest nível 40.
     Opções para: Espadachim, Cavaleiro, Templário, Noviço, Sacerdote, Monge, Mercador,
     Ferreiro, Alquimista e Espiritualista.
-  - *armaIII* (0, 1, 2) - Determina a opção de equipamentos da Quest nível 60.
+  - **armaIII (0, 1, 2)** - Determina a opção de equipamentos da Quest nível 60.
     Opções para: Cavaleiro, Templário, Sacerdote, Monge, Sábio, Bardo, 
     Odalisca, Ferreiro, Alquimista, Mercenário, Espiritualista e Ninja.
 
-* 💎 Encantamentos:
+### 💎 Encantamentos:
 
-  - *encant* (0, 1) - Determina se o encantamento de nível 70 vai ser ATQ ou ATQM.
-  - *carta* (0, 1, 2, 3, 4, 5) - Tipo de carta +DMG/MDMG ou fator de cura no encantamento nível 80.
+  - **encant (0, 1)** - Determina se o encantamento de nível 70 vai ser ATQ ou ATQM.
+  - **carta (0, 1, 2, 3, 4, 5)** - Tipo de carta +DMG/MDMG ou fator de cura no encantamento nível 80.
 
-* 🧪 Utilizáveis:
+### 🧪 Utilizáveis:
 
-  - *semAsas* (0, 1) - Desabilita a compra de Asas de Mosquito.
-  - *semPots* (0, 1) - Desabilita a compra de Poções Laranjas.
+  - **semAsas (0, 1)** - Desabilita a compra de Asas de Mosquito.
+  - **semPots (0, 1)** - Desabilita a compra de Poções Laranjas.
 
-* 📈 Fases de Quest: (Determinam a fase da quest em que o bot se encontra)
+### 📈 Fases de Quest: (Determinam a fase da quest em que o bot se encontra)
 (Jamais mexa se não houver necessidade, pode gerar conflitos e prejudicar a restauração ao ponto original)
 
-  - *eden03* (0, 1, 2, 3, 4, end)	    - Variável inexistente = Iniciar a quest no npc.
-  - *eden04* (0, 1, 2, 3, 4, end)	    - 0 = Salvar na kafra da quest.
-  - *eden05* (0, 1, 2, 3, 4, end)	    - 1 = Checar e comprar mantimentos.
-  - *eden07* (0, 1, 2, 3, 4, end)	    - 2 = Execução da Quest.
-  - *eden08* (0, 1, 2, 3, 4, end)	    - 3 = Resgate de equipamentos.
-  - *eden09* (0, 1, 2, 3, 4, end)	    - 4 = Restaurar configurações.
-  - *eden10* (0, 1, 2, 3, 4, end)	    - end = Conclusão.
-  - *eden11* (0, 1, 2, 3, 4, end)
----
+<table>
+<tr>
+<th> Variáveis (Valores) </th>
+<th> Valores (Função)</th>
+</tr>
+<tr>
+<td>
+
+```c++
+* eden03 (0, 1, 2, 3, 4, end);
+* eden04 (0, 1, 2, 3, 4, end);    
+* eden05 (0, 1, 2, 3, 4, end);	
+* eden07 (0, 1, 2, 3, 4, end);
+* eden08 (0, 1, 2, 3, 4, end);
+* eden09 (0, 1, 2, 3, 4, end);
+* eden10 (0, 1, 2, 3, 4, end);
+* eden11 (0, 1, 2, 3, 4, end);
+```
+
+</td>
+<td>
+
+```c++
+* 0 (Salvar na kafra da quest);
+* 1 (Checar e comprar mantimentos);
+* 2 (Execução da Quest);
+* 3 (Resgate de equipamentos);
+* 4 (Restaurar configurações);
+* end (Conclusão);
+```
+
+</td>
+</tr>
+</table>
+
 
 ## 🚀 Implementações futuras
 
