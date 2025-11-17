@@ -118,14 +118,14 @@ HWID necessário para ativação.
 
 ### ⚡ Nível de inicio das quests:
 
-  - **lvlQuest03 (26 ~ 32)** - Determina o nível em que o personagem irá começar a Quest da Instrutora Boya de nível 26.
-  - **lvlQuest04 (33 ~ 39)** - Determina o nível em que o personagem irá começar a Quest da Instrutora Boya de nível 33.
-  - **lvlQuest05 (40 ~ 49)** - Determina o nível em que o personagem irá começar a Quest da Instrutora Boya de nível 40.
-  - **lvlQuest07 (75 ~ 99)** - Determina o nível em que o personagem irá começar a Quest da Instrutora Boya de nível 75.
-  - **lvlQuest08 (60 ~ 69)** - Determina o nível em que o personagem irá começar a Quest do Instrutor Ur de nível 60.
-  - **lvlQuest09 (70 ~ 79)** - Determina o nível em que o personagem irá começar a Quest do Instrutor Ur de nível 70.
-  - **lvlQuest10 (80 ~ 89)** - Determina o nível em que o personagem irá começar a Quest do Instrutor Ur de nível 80.
-  - **lvlQuest11 (90 ~ 99)** - Determina o nível em que o personagem irá começar a Quest do Instrutor Ur de nível 90.
+  - **lvlQuest03 (26 ~ 32)** - Nível em que o personagem irá começar a Quest da Instrutora Boya de nível 26.
+  - **lvlQuest04 (33 ~ 39)** - Nível em que o personagem irá começar a Quest da Instrutora Boya de nível 33.
+  - **lvlQuest05 (40 ~ 49)** - Nível em que o personagem irá começar a Quest da Instrutora Boya de nível 40.
+  - **lvlQuest07 (75 ~ 99)** - Nível em que o personagem irá começar a Quest da Instrutora Boya de nível 75.
+  - **lvlQuest08 (60 ~ 69)** - Nível em que o personagem irá começar a Quest do Instrutor Ur de nível 60.
+  - **lvlQuest09 (70 ~ 79)** - Nível em que o personagem irá começar a Quest do Instrutor Ur de nível 70.
+  - **lvlQuest10 (80 ~ 89)** - Nível em que o personagem irá começar a Quest do Instrutor Ur de nível 80.
+  - **lvlQuest11 (90 ~ 99)** - Nível em que o personagem irá começar a Quest do Instrutor Ur de nível 90.
 
 ### ⚔️ Equipamentos:
 
