@@ -186,6 +186,10 @@ HWID necessário para ativação.
 </tr>
 </table>
 
+## 💵 Investimento 
+* R$ 20 por HWID
+* É possível solicitar um trial de 1 dia sem compromisso.
+
 
 ## 🚀 Implementações futuras
 
