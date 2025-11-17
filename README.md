@@ -151,14 +151,14 @@ HWID necessário para ativação.
 * 📈 Fases de Quest: (Determinam a fase da quest em que o bot se encontra)
 (Jamais mexa se não houver necessidade, pode gerar conflitos e prejudicar a restauração ao ponto original)
 
-  - *eden03* (0, 1, 2, 3, end)	- Variável inexistente = Iniciar a quest no npc.
-  - *eden04* (0, 1, 2, 3, end)	- 0 = Salvar na kafra da quest.
-  - *eden05* (0, 1, 2, 3, end)	- 1 = Checar e comprar mantimentos.
-  - *eden07* (0, 1, 2, 3, end)	- 2 = Execução da Quest.
-  - *eden08* (0, 1, 2, 3, end)	- 3 = Resgate de equipamentos.
-  - *eden09* (0, 1, 2, 3, end)	- 4 = Restaurar configurações.
-  - *eden10* (0, 1, 2, 3, end)	- end = Conclusão.
-  - *eden11* (0, 1, 2, 3, end)
+  - *eden03* (0, 1, 2, 3, 4, end)	    - Variável inexistente = Iniciar a quest no npc.
+  - *eden04* (0, 1, 2, 3, 4, end)	    - 0 = Salvar na kafra da quest.
+  - *eden05* (0, 1, 2, 3, 4, end)	    - 1 = Checar e comprar mantimentos.
+  - *eden07* (0, 1, 2, 3, 4, end)	    - 2 = Execução da Quest.
+  - *eden08* (0, 1, 2, 3, 4, end)	    - 3 = Resgate de equipamentos.
+  - *eden09* (0, 1, 2, 3, 4, end)	    - 4 = Restaurar configurações.
+  - *eden10* (0, 1, 2, 3, 4, end)	    - end = Conclusão.
+  - *eden11* (0, 1, 2, 3, 4, end)
 ---
 
 ## 🚀 Implementações futuras
