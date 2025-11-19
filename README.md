@@ -1,4 +1,4 @@
-## 🛡️ edenEquips v1.3.4 (LATAM)
+## ⚜️ edenEquips v1.3.4 (LATAM)
 [<img alt="Static Badge" target="_blank" src="https://img.shields.io/badge/Discord-.boscv-%237289DA?logo=discord&logoColor=%23fff">](https://discord.com/users/boscv.)\
 [<img alt="Static Badge" src="https://img.shields.io/badge/Discord-Openkore%20LATAM-%237289DA?logo=discord&logoColor=%23fff">](https://discord.com/channels/1396892709775605922)\
 [<img alt="Static Badge" src="https://img.shields.io/badge/F%C3%B3rum-Openkore%20LATAM-%23ec8736?logo=phpBB&logoColor=%23fff">](https://openkore.com.br/)
@@ -119,80 +119,60 @@ HWID necessário para ativação.
 
 ### ⚡ Nível de inicio das quests:
 
-  - **lvlQuest03 (26 ~ 32)** - Nível em que o personagem irá começar a Quest da Instrutora Boya de nível 26.
-  - **lvlQuest04 (33 ~ 39)** - Nível em que o personagem irá começar a Quest da Instrutora Boya de nível 33.
-  - **lvlQuest05 (40 ~ 49)** - Nível em que o personagem irá começar a Quest da Instrutora Boya de nível 40.
-  - **lvlQuest07 (75 ~ 99)** - Nível em que o personagem irá começar a Quest da Instrutora Boya de nível 75.
-  - **lvlQuest08 (60 ~ 69)** - Nível em que o personagem irá começar a Quest do Instrutor Ur de nível 60.
-  - **lvlQuest09 (70 ~ 79)** - Nível em que o personagem irá começar a Quest do Instrutor Ur de nível 70.
-  - **lvlQuest10 (80 ~ 89)** - Nível em que o personagem irá começar a Quest do Instrutor Ur de nível 80.
-  - **lvlQuest11 (90 ~ 99)** - Nível em que o personagem irá começar a Quest do Instrutor Ur de nível 90.
+| Variável  | Valores | Informação |
+| ------------- | ------------- | ------------- |
+| **`lvlQuest03`** | `26 ~ 32` | Nível em que o personagem irá começar a Quest da **Instrutora Boya** de **nível 26**.  |
+| **`lvlQuest04`** | `33 ~ 39` | Nível em que o personagem irá começar a Quest da **Instrutora Boya** de **nível 33**.  |
+| **`lvlQuest05`** | `40 ~ 49` | Nível em que o personagem irá começar a Quest da **Instrutora Boya** de **nível 40**.  |
+| **`lvlQuest07`** | `75 ~ 99` | Nível em que o personagem irá começar a Quest da **Instrutora Boya** de **nível 75**.  |
+| **`lvlQuest08`** | `60 ~ 69` | Nível em que o personagem irá começar a Quest do **Instrutor Ur** de **nível 60**.  |
+| **`lvlQuest09`** | `70 ~ 79` | Nível em que o personagem irá começar a Quest do **Instrutor Ur** de **nível 70**.  |
+| **`lvlQuest10`** | `80 ~ 89` | Nível em que o personagem irá começar a Quest do **Instrutor Ur** de **nível 80**.  |
+| **`lvlQuest11`** | `90 ~ 99` | Nível em que o personagem irá começar a Quest do **Instrutor Ur** de **nível 90**.  |
 
 ### ⚔️ Equipamentos:
 
-  - **armaI (0, 1)** - Determina a opção de equipamentos da Quest nível 26.
-    Opções para: Espadachim, Noviço e Mercador.
-  - **armaII (0, 1)** - Determina a opção de equipamentos da Quest nível 40.
-    Opções para: Espadachim, Cavaleiro, Templário, Noviço, Sacerdote, Monge, Mercador,
-    Ferreiro, Alquimista e Espiritualista.
-  - **armaIII (0, 1, 2)** - Determina a opção de equipamentos da Quest nível 60.
-    Opções para: Cavaleiro, Templário, Sacerdote, Monge, Sábio, Bardo, 
-    Odalisca, Ferreiro, Alquimista, Mercenário, Espiritualista e Ninja.
+
+| Variável  | Valores | Informação |
+| ------------- | ------------- | ------------- |
+| **`armaI`** | `0 ~ 1` | Determina a opção de **equipamentos** da Quest **nível 26**. |
+| **`armaII`** | `0 ~ 1` | Determina a opção de **equipamentos** da Quest **nível 40**. |
+| **`armaIII`** | `0 ~ 2` | Determina a opção de **equipamentos** da Quest **nível 60**. |
 
 ### 💎 Encantamentos:
 
-  - **encant (0, 1)** - Determina se o encantamento de nível 70 vai ser ATQ ou ATQM.
-  - **carta (0, 1, 2, 3, 4, 5)** - Tipo de carta +DMG/MDMG ou fator de cura no encantamento nível 80.
+| Variável  | Valores | Informação |
+| ------------- | ------------- | ------------- |
+| **`encant`** | `0 ~ 1` | Determina o tipo de **encantamento** recebido após a Quest de **nível 70**. |
+| **`carta`** | `0 ~ 5` | Determina o tipo de **carta** recebido após as Quests de **nível 80** e **90**. |
 
 ### 🧪 Utilizáveis:
 
-  - **semAsas (0, 1)** - Desabilita a compra de Asas de Mosquito.
-  - **semPots (0, 1)** - Desabilita a compra de Poções Laranjas.
+| Variável  | Valor | Informação |
+| ------------- | ------------- | ------------- |
+| **`semAsas`** | `0 ~ 1` | Desabilita a compra de **Asas de Mosquito**. |
+| **`semPots`** | `0 ~ 1` | Desabilita a compra de **Poções Laranjas**. |
 
 ### 📈 Fases de Quest: (Determinam a fase da quest em que o bot se encontra)
 (Jamais mexa se não houver necessidade, pode gerar conflitos e prejudicar a restauração ao ponto original)
 
-<table>
-<tr>
-<th> Variáveis (Valores) </th>
-<th> Valores (Função)</th>
-</tr>
-<tr>
-<td>
+| Variável  | Valor | Informação |
+| ------------- | ------------- | ------------- |
+| **`eden03`** | `0 ~ 5` | `0` = Salvar na Kafra da Quest. |
+| **`eden04`** | `0 ~ 5` | `1` = Checar e comprar mantimentos. |
+| **`eden05`** | `0 ~ 5` | `2` = Execução da Quest. |
+| **`eden07`** | `0 ~ 5` | `3` = Resgate de equipamentos. |
+| **`eden08`** | `0 ~ 5` | `4` = Restaurar configurações. |
+| **`eden09`** | `0 ~ 5` | `5` = Fim da Quest. |
+| **`eden10`** | `0 ~ 5` | |
+| **`eden11`** | `0 ~ 5` | |
 
-```c++
-* eden03 (0, 1, 2, 3, 4, end);
-* eden04 (0, 1, 2, 3, 4, end);    
-* eden05 (0, 1, 2, 3, 4, end);	
-* eden07 (0, 1, 2, 3, 4, end);
-* eden08 (0, 1, 2, 3, 4, end);
-* eden09 (0, 1, 2, 3, 4, end);
-* eden10 (0, 1, 2, 3, 4, end);
-* eden11 (0, 1, 2, 3, 4, end);
-```
-
-</td>
-<td>
-
-```c++
-* 0 (Salvar na kafra da quest);
-* 1 (Checar e comprar mantimentos);
-* 2 (Execução da Quest);
-* 3 (Resgate de equipamentos);
-* 4 (Restaurar configurações);
-* end (Conclusão);
-```
-
-</td>
-</tr>
-</table>
-
-## 💵 Investimento 
-* R$ 20 por HWID
-* É possível solicitar um trial de 1 dia sem compromisso.
+### 💵 Investimento 
+* **R$20** / **HWID**
+* É possível solicitar um trial de 1 dia **sem compromisso**.
 
 
-## 🚀 Implementações futuras
+### 🚀 Implementações futuras
 
 * Quests do Éden faltantes dos níveis 12, 20 e 50.
 * Quests diárias e equipamentos 100+.
