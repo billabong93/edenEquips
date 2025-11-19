@@ -160,8 +160,13 @@ sub fetch_macro_payload {
     if ($res != 0) {
         unless ($quiet) {
             warning "[edenEquips] HWID - Acesso negado. stderr:\n$output\n";
-            warning "[edenEquips] Envie o HWID para ativação:\n";
-            warning "[DISCORD] https://discord.com/users/boscv. \n";
+            if ($output =~ /hash_mismatch/i) {
+                warning "[edenEquips] Atualize o plugin:\n";
+                warning "[GitHub] https://github.com/billabong93/edenEquips\n";
+            } else {
+                warning "[edenEquips] Envie o HWID para ativação:\n";
+                warning "[Discord] https://discord.com/users/boscv. \n";
+            }
         }
         return ($res, undef);
     }
