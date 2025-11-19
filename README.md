@@ -148,7 +148,7 @@ HWID necessário para ativação.
 
 ### 🧪 Utilizáveis:
 
-| Variável  | Valor | Informação |
+| Variável  | Valores | Informação |
 | ------------- | ------------- | ------------- |
 | **`semAsas`** | `0 ~ 1` | Desabilita a compra de **Asas de Mosquito**. |
 | **`semPots`** | `0 ~ 1` | Desabilita a compra de **Poções Laranjas**. |
@@ -156,7 +156,7 @@ HWID necessário para ativação.
 ### 📈 Fases de Quest: (Determinam a fase da quest em que o bot se encontra)
 (Jamais mexa se não houver necessidade, pode gerar conflitos e prejudicar a restauração ao ponto original)
 
-| Variável  | Valor | Informação |
+| Variável  | Valores | Informação |
 | ------------- | ------------- | ------------- |
 | **`eden03`** | `0 ~ 5` | `0` = Salvar na Kafra da Quest. |
 | **`eden04`** | `0 ~ 5` | `1` = Checar e comprar mantimentos. |
