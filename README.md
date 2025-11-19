@@ -35,8 +35,9 @@ HWID necessário para ativação.
 
   - Python
   - [Automacro aeroplano](https://openkore.com.br/viewtopic.php?p=6470) *ra_fild12*.
+  - [Plugin eventMacros](https://github.com/dhmello/openkore_latam) atualizado. 
   - Se não existir, criar um arquivo **eventMacros.txt** na pasta **./control.**
-  - Pasta [**./fields** e **portals.txt**](https://github.com/dhmello/openkore_latam) atualizados.
+  - Pasta [./fields e portals.txt](https://github.com/dhmello/openkore_latam) atualizados.
 
 ---
 
