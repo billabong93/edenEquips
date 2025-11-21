@@ -33,6 +33,12 @@ def num_range(start, end_inclusive):
     """Gera {'start', 'start+1', ..., 'end_inclusive'} como strings."""
     return {str(i) for i in range(start, end_inclusive + 1)}
 
+def quest_off(start, end_inclusive):
+    """Gera {'start', ..., 'end_inclusive', 'off'} como strings."""
+    vals = num_range(start, end_inclusive)
+    vals.add("off")
+    return vals
+    
 # ==============================
 # Opções e regras de validação
 # ==============================
@@ -40,16 +46,16 @@ options = {
     "lvlQuest03": {
         "group": "Arma do Éden I",
         "label": "Nível da Quest [26–32]",
-        "desc": "QUEST ARMA DO ÉDEN I - LVL [26-32] \n\nEscolha o nível em que seu personagem vai começar a quest.\nÉ possível fazer apenas a Quest [23-32] ou [33-39].\n26 = (padrão)",
+        "desc": "QUEST ARMA DO ÉDEN I - LVL [26-32] \n\nEscolha o nível em que seu personagem vai começar a quest.\nÉ possível fazer apenas a Quest [23-32] ou [33-39].\n26 = (padrão)\noff = Desativa a Quest",
         "default": "26",
-        "allowed": num_range(26, 32),
+        "allowed": quest_off(26, 32),
     },
     "lvlQuest04": {
         "group": "Arma do Éden I",
         "label": "Nível da Quest [33–39]",
-        "desc": "QUEST ARMA DO ÉDEN I - LVL [33-39] \n\nEscolha o nível em que seu personagem vai começar a quest.\nÉ possível fazer apenas a Quest [23-32] ou [33-39].\n33 = (padrão)",
+        "desc": "QUEST ARMA DO ÉDEN I - LVL [33-39] \n\nEscolha o nível em que seu personagem vai começar a quest.\nÉ possível fazer apenas a Quest [23-32] ou [33-39].\n33 = (padrão)\noff = Desativa a Quest",
         "default": "33",
-        "allowed": num_range(33, 39),
+        "allowed": quest_off(33, 39),
     },
     "armaI": {
         "group": "Arma do Éden I",
@@ -62,16 +68,16 @@ options = {
     "lvlQuest05": {
         "group": "Arma do Éden II",
         "label": "Nível da Quest [40–49]",
-        "desc": "QUEST ARMA DO ÉDEN II - LVL [40-49] \n\nEscolha o nível em que seu personagem vai começar a quest.\nÉ possível fazer apenas a Quest [40-49] ou [75+].\n40 = (padrão)",
+        "desc": "QUEST ARMA DO ÉDEN II - LVL [40-49] \n\nEscolha o nível em que seu personagem vai começar a quest.\nÉ possível fazer apenas a Quest [40-49] ou [75+].\n40 = (padrão)\noff = Desativa a Quest",
         "default": "40",
-        "allowed": num_range(40, 49),
+        "allowed": quest_off(40, 49),
     },
     "lvlQuest07": {
         "group": "Arma do Éden II",
         "label": "Nível da Quest [75+]",
-        "desc": "QUEST ARMA DO ÉDEN II - LVL [75+] \n\nEscolha o nível em que seu personagem vai começar a quest.\nÉ possível fazer apenas a Quest [40-49] ou [75+].\n75 = (padrão)\n\nObservação: Essa Quest é redundante, pois é possível adquirir a Arma III no nível 60.",
+        "desc": "QUEST ARMA DO ÉDEN II - LVL [75+] \n\nEscolha o nível em que seu personagem vai começar a quest.\nÉ possível fazer apenas a Quest [40-49] ou [75+].\n75 = (padrão)\noff = Desativa a Quest\n\nObservação: Essa Quest é redundante, pois é possível adquirir a Arma III no nível 60.",
         "default": "75",
-        "allowed": num_range(75, 99),
+        "allowed": quest_off(75, 99),
     },
     "armaII": {
         "group": "Arma do Éden II",
@@ -84,9 +90,9 @@ options = {
     "lvlQuest08": {
         "group": "Arma do Éden III",
         "label": "Nível da Quest [60–69]",
-        "desc": "QUEST ARMA DO ÉDEN III - LVL [60-69] \n\nEscolha o nível em que seu personagem vai começar a quest.\n60 = (padrão)",
+        "desc": "QUEST ARMA DO ÉDEN III - LVL [60-69] \n\nEscolha o nível em que seu personagem vai começar a quest.\n60 = (padrão)\noff = Desativa a Quest",
         "default": "60",
-        "allowed": num_range(60, 69),
+        "allowed": quest_off(60, 69),
     },
     "armaIII": {
         "group": "Arma do Éden III",
@@ -99,9 +105,9 @@ options = {
     "lvlQuest09": {
         "group": "Encantamentos e Cartas",
         "label": "Nível da Quest [70–79]",
-        "desc": "QUEST ENCANTAMENTO - LVL [70-79] \n\nEscolha o nível em que seu personagem vai começar a quest.\n70 = (padrão)",
+        "desc": "QUEST ENCANTAMENTO - LVL [70-79] \n\nEscolha o nível em que seu personagem vai começar a quest.\n70 = (padrão)\noff = Desativa a Quest",
         "default": "70",
-        "allowed": num_range(70, 79),
+        "allowed": quest_off(70, 79),
     },
     "encant": {
         "group": "Encantamentos e Cartas",
@@ -114,9 +120,9 @@ options = {
     "lvlQuest10": {
         "group": "Encantamentos e Cartas",
         "label": "Nível da Quest [80–89]",
-        "desc": "QUEST DE CARTA - LVL [80-89] \n\nEscolha o nível em que seu personagem vai começar a quest.\n80 = (padrão)",
+        "desc": "QUEST DE CARTA - LVL [80-89] \n\nEscolha o nível em que seu personagem vai começar a quest.\n80 = (padrão)\noff = Desativa a Quest",
         "default": "80",
-        "allowed": num_range(80, 89),
+        "allowed": quest_off(80, 89),
     },
     "carta": {
         "group": "Encantamentos e Cartas",
@@ -128,9 +134,9 @@ options = {
     "lvlQuest11": {
         "group": "Encantamentos e Cartas",
         "label": "Nível da Quest [90–99]",
-        "desc": "QUEST ENCANTAMENTO COM CARTAS II - LVL [90-99] \n\nEscolha o nível em que seu personagem vai começar a quest.\n90 = (padrão)",
+        "desc": "QUEST ENCANTAMENTO COM CARTAS II - LVL [90-99] \n\nEscolha o nível em que seu personagem vai começar a quest.\n90 = (padrão)\noff = Desativa a Quest",
         "default": "90",
-        "allowed": num_range(90, 99),
+        "allowed": quest_off(90, 99),
     },
 
     "semAsas": {
