@@ -9,7 +9,7 @@ HWID necessário para ativação.
 ---
 
 ### 📚 Sumário
-- [📜 Quests Incluídas (Todas as classes)](#-quests-inclu%C3%ADdas-para-todas-as-classes)
+- [📜 Quests Incluídas (Para todas as classes)](#-quests-inclu%C3%ADdas-para-todas-as-classes)
 - [🤖 Funções Principais](#-fun%C3%A7%C3%B5es-principais)
 - [⚙️ Requisitos](#%EF%B8%8F-requisitos)
 - [📝 Instruções](#-instru%C3%A7%C3%B5es)
