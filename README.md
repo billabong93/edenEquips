@@ -252,71 +252,71 @@ Todas as variáveis abaixo usam `0` = **Desativado** (padrão) e `1` = **Ativado
 
 | Variável  | Valores | Informação |
 | --------- | ------- | ---------- |
-| **`magma100_0`** | `0 ~ 1` | Quest contra **Pesadelo Sombrio** na **Caverna de Magma** [100]. |
-| **`magma100_1`** | `0 ~ 1` | Quest contra **Deletério / Exterminador** na **Caverna de Magma** [100]. |
-| **`magma100_2`** | `0 ~ 1` | Quest de coleta de **Pedra Pome** na **Caverna de Magma** [100]. |
+| **`magma100_0`** | `0 ~ 1` | Eliminar **Pesadelo Sombrio** . |
+| **`magma100_1`** | `0 ~ 1` | Eliminar **Deletério** e **Exterminador** . |
+| **`magma100_2`** | `0 ~ 1` | Coletar **Pedra Pome** . |
 
 #### Glast Heim [100-110]
 
 | Variável  | Valores | Informação |
 | --------- | ------- | ---------- |
-| **`gl100_0`** | `0 ~ 1` | Quest contra **Carat** em **Glast Heim** [100]. |
-| **`gl100_1`** | `0 ~ 1` | Quest contra **Arclouse** em **Glast Heim** [100]. |
-| **`gl100_2`** | `0 ~ 1` | Quest contra **Anolian** em **Glast Heim** [100]. |
-| **`gl100_3`** | `0 ~ 1` | Quest contra **Sting** em **Glast Heim** [100]. |
-| **`gl100_4`** | `0 ~ 1` | Quest contra **Majoruros** em **Glast Heim** [100]. |
-| **`gl110_5`** | `0 ~ 1` | Quest contra **Raydric** em **Glast Heim** [110]. |
-| **`gl110_6`** | `0 ~ 1` | Quest contra **Khalitzburg** em **Glast Heim** [110]. |
-| **`gl110_7`** | `0 ~ 1` | Quest contra **Andarilho** em **Glast Heim** [110]. |
-| **`gl110_8`** | `0 ~ 1` | Quest contra **Cavaleiro do Abismo** em **Glast Heim** [110]. |
+| **`gl100_0`** | `0 ~ 1` | Eliminar **Carat**. |
+| **`gl100_1`** | `0 ~ 1` | Eliminar **Arclouse**. |
+| **`gl100_2`** | `0 ~ 1` | Eliminar **Anolian**. |
+| **`gl100_3`** | `0 ~ 1` | Eliminar **Sting**. |
+| **`gl100_4`** | `0 ~ 1` | Eliminar **Majoruros**. |
+| **`gl110_5`** | `0 ~ 1` | Eliminar **Raydric**. |
+| **`gl110_6`** | `0 ~ 1` | Eliminar **Khalitzburg**. |
+| **`gl110_7`** | `0 ~ 1` | Eliminar **Andarilho**. |
+| **`gl110_8`** | `0 ~ 1` | Eliminar **Cavaleiro do Abismo**. |
 
 #### Ash Vacuum [100-110]
 
 | Variável  | Valores | Informação |
 | --------- | ------- | ---------- |
-| **`ash100_0`** | `0 ~ 1` | Quest contra **Pinguicula** em **Ash Vacuum** [100]. |
-| **`ash100_1`** | `0 ~ 1` | Quest contra **Vespa Vagalume** em **Ash Vacuum** [100]. |
-| **`ash100_2`** | `0 ~ 1` | Quest contra **Leão de Vinhas** em **Ash Vacuum** [100]. |
-| **`ash110_3`** | `0 ~ 1` | Quest contra **Pinguicula Sombria** em **Ash Vacuum** [110]. |
-| **`ash110_4`** | `0 ~ 1` | Quest contra **Nepenthes** em **Ash Vacuum** [110]. |
-| **`ash110_5`** | `0 ~ 1` | Quest contra **Naga** em **Ash Vacuum** [110]. |
-| **`ash110_6`** | `0 ~ 1` | Quest contra **Cornus** em **Ash Vacuum** [110]. |
-| **`ash110_7`** | `0 ~ 1` | Quest contra **Larva Centopeia** em **Ash Vacuum** [110]. |
-| **`ash110_8`** | `0 ~ 1` | Quest contra **Chifre Místico** em **Ash Vacuum** [110]. |
+| **`ash100_0`** | `0 ~ 1` | Eliminar **Pinguicula**. |
+| **`ash100_1`** | `0 ~ 1` | Eliminar **Vespa Vagalume**. |
+| **`ash100_2`** | `0 ~ 1` | Eliminar **Leão de Vinhas**. |
+| **`ash110_3`** | `0 ~ 1` | Eliminar **Pinguicula Sombria**. |
+| **`ash110_4`** | `0 ~ 1` | Eliminar **Nepenthes**. |
+| **`ash110_5`** | `0 ~ 1` | Eliminar **Naga**. |
+| **`ash110_6`** | `0 ~ 1` | Eliminar **Cornus**. |
+| **`ash110_7`** | `0 ~ 1` | Eliminar **Larva Centopeia**. |
+| **`ash110_8`** | `0 ~ 1` | Coletar **Chifre Místico**. |
 
 #### Arunafeltz [100]
 
 | Variável  | Valores | Informação |
 | --------- | ------- | ---------- |
-| **`aruna100_0`** | `0 ~ 1` | Quest contra **Kobold (Machado/Martelo/Maça)** em mapas de **Arunafeltz** [100]. |
-| **`aruna100_1`** | `0 ~ 1` | Quest contra **Vento da Colina**. |
-| **`aruna100_2`** | `0 ~ 1` | Quest contra **Lobo do Deserto**. |
-| **`aruna100_3`** | `0 ~ 1` | Quest contra **Cabelo Azul**. |
-| **`aruna100_4`** | `0 ~ 1` | Quest contra **Drosera / Muscipular**. |
-| **`aruna100_5`** | `0 ~ 1` | Quest contra **Magmaring**. |
-| **`aruna100_6`** | `0 ~ 1` | Quest contra **Coração Glacial**. |
-| **`aruna100_7`** | `0 ~ 1` | Quest contra **Yeti**. |
-| **`aruna100_8`** | `0 ~ 1` | Quest contra **Titã de Gelo / Gazeti**. |
+| **`aruna100_0`** | `0 ~ 1` | Eliminar **Kobold (Machado/Martelo/Maça)**. |
+| **`aruna100_1`** | `0 ~ 1` | Eliminar **Vento da Colina**. |
+| **`aruna100_2`** | `0 ~ 1` | Eliminar **Lobo do Deserto**. |
+| **`aruna100_3`** | `0 ~ 1` | Coletar **Cabelo Azul**. |
+| **`aruna100_4`** | `0 ~ 1` | Eliminar **Drosera** e **Muscipular**. |
+| **`aruna100_5`** | `0 ~ 1` | Eliminar **Magmaring**. |
+| **`aruna100_6`** | `0 ~ 1` | Coletar **Coração Glacial**. |
+| **`aruna100_7`** | `0 ~ 1` | Eliminar **Yeti**. |
+| **`aruna100_8`** | `0 ~ 1` | Eliminar **Titã de Gelo** e **Gazeti**. |
 
 #### Torre de Thanatos [110]
 
 | Variável  | Valores | Informação |
 | --------- | ------- | ---------- |
-| **`thana110_0`** | `0 ~ 1` | Quest contra **Mímico Antigo** na **Torre de Thanatos** [110]. |
-| **`thana110_1`** | `0 ~ 1` | Quest contra **Palavra Morta**. |
-| **`thana110_2`** | `0 ~ 1` | Quest contra **Barão Coruja**. |
-| **`thana110_3`** | `0 ~ 1` | Quest contra **Página Sangrenta**. |
-| **`thana110_4`** | `0 ~ 1` | Quest contra **Pergaminho Antigo**. |
-| **`thana110_5`** | `0 ~ 1` | Quest contra **Farrapos**. |
+| **`thana110_0`** | `0 ~ 1` | Eliminar **Mímico Antigo** |
+| **`thana110_1`** | `0 ~ 1` | Eliminar **Palavra Morta**. |
+| **`thana110_2`** | `0 ~ 1` | Eliminar **Barão Coruja**. |
+| **`thana110_3`** | `0 ~ 1` | Coletar **Página Sangrenta**. |
+| **`thana110_4`** | `0 ~ 1` | Coletar **Pergaminho Antigo**. |
+| **`thana110_5`** | `0 ~ 1` | Coletar **Farrapos**. |
 
 #### Ruínas de Juperos [110]
 
 | Variável  | Valores | Informação |
 | --------- | ------- | ---------- |
-| **`jupe110_0`** | `0 ~ 1` | Quest contra **Venatu (Laranja/Azul)** em **Ruínas de Juperos** [110]. |
-| **`jupe110_1`** | `0 ~ 1` | Quest contra **Venatu (Roxo/Verde)**. |
-| **`jupe110_2`** | `0 ~ 1` | Quest contra **Dimik (Verde/Azul)**. |
-| **`jupe110_3`** | `0 ~ 1` | Quest contra **Dimik (Vermelho/Laranja)**. |
+| **`jupe110_0`** | `0 ~ 1` | Eliminar **Venatu (Laranja/Azul)**. |
+| **`jupe110_1`** | `0 ~ 1` | Eliminar **Venatu (Roxo/Verde)**. |
+| **`jupe110_2`** | `0 ~ 1` | Eliminar **Dimik (Verde/Azul)**. |
+| **`jupe110_3`** | `0 ~ 1` | Eliminar **Dimik (Vermelho/Laranja)**. |
 
 ---
 
