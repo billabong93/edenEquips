@@ -8,7 +8,46 @@ HWID necessário para ativação.
 
 ---
 
-## 📜 Quests Incluídas (Todas as classes)
+### 📚 Sumário
+- [📜 Quests Incluídas (Todas as classes)](#-quests-inclu%C3%ADdas-para-todas-as-classes)
+- [🤖 Funções Principais](#-fun%C3%A7%C3%B5es-principais)
+- [⚙️ Requisitos](#%EF%B8%8F-requisitos)
+- [📝 Instruções](#-instru%C3%A7%C3%B5es)
+- [🛠️ Configurações necessárias](#%EF%B8%8F-configura%C3%A7%C3%B5es-necess%C3%A1rias-para-boa-execu%C3%A7%C3%A3o-do-plugin)
+- [⚠️ O que não fazer](#%EF%B8%8F-o-que-n%C3%A3o-fazer)
+- [📢 Informações e avisos](#-informa%C3%A7%C3%B5es-e-avisos)
+- [🗃️ Estrutura da pasta](#%EF%B8%8F-estrutura-da-pasta)
+- [💾 Variáveis de configurações e suas funções](#-vari%C3%A1veis-de-configura%C3%A7%C3%B5es-e-suas-fun%C3%A7%C3%B5es-inseridas-em-configtxt)
+  - [🌱 Nível de início das Quests](#-n%C3%ADvel-de-in%C3%ADcio-das-quests)
+  - [⚔️ Equipamentos (Boya / Ur 26–90)](#%EF%B8%8F-equipamentos-boya--ur-2690)
+  - [💎 Encantamentos e Cartas (Ur 70–90)](#-encantamentos-e-cartas-ur-7090)
+  - [🧪 Consumíveis](#-consum%C3%ADveis)
+  - [📈 Fases das Quests](#-fases-das-quests)
+    - [26–90](#26-90)
+    - [100+](#100)
+  - [⚡ Quests do Éden [100–110]](#-quests-do-%C3%A9den-100110)
+    - [Ativação geral](#ativa%C3%A7%C3%A3o-geral)
+    - [Caverna de Magma [100]](#caverna-de-magma-100)
+    - [Glast Heim [100–110]](#glast-heim-100-110)
+    - [Ash Vacuum [100–110]](#ash-vacuum-100-110)
+    - [Arunafeltz [100]](#arunafeltz-100)
+    - [Torre de Thanatos [110]](#torre-de-thanatos-110)
+    - [Ruínas de Juperos [110]](#ru%C3%ADnas-de-juperos-110)
+  - [👑 Equipamentos Éden [100+]](#-equipamentos-%C3%A9den-100)
+    - [Equipamentos [100]](#equipamentos-100)
+    - [Equipamentos [115]](#equipamentos-115)
+    - [Equipamentos [130]](#equipamentos-130)
+    - [Equipamentos [145]](#equipamentos-145)
+    - [Equipamentos [160]](#equipamentos-160)
+  - [🎓 Quest de 1ª Classe](#-quest-de-1%C2%AA-classe)
+  - [📚 Quests Misc. (Aprendiz / Novo Mundo)](#-quests-misc-aprendiz--novo-mundo)
+- [💵 Investimento](#-investimento)
+- [🚀 Implementações futuras](#-implementa%C3%A7%C3%B5es-futuras)
+
+ 
+---
+
+## 📜 Quests Incluídas (Para todas as classes)
 
   - **Resgate de equipamentos** dos níveis 7 ao 160.
   - **Quests da Instrutora Boya** dos níveis 26, 33, 40 e 75.
@@ -170,7 +209,7 @@ HWID necessário para ativação.
 
 ---
 
-### 📈 Fases de Quest
+### 📈 Fases das Quests
 *(Determinadas pelo plugin — não recomendado editar manualmente.)* 
 > **Jamais mexa** nessas variáveis se não houver necessidade de rollback/debug. Elas controlam em que etapa da macro o bot se encontra.
 
@@ -281,7 +320,7 @@ Todas as variáveis abaixo usam `0` = **Desativado** (padrão) e `1` = **Ativado
 
 ---
 
-### 🧥 Equipamentos Éden [100+]
+### 👑 Equipamentos Éden [100+]
 
 #### Tipo de acessórios
 
