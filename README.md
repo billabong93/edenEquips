@@ -164,14 +164,14 @@ HWID necessário para ativação.
 
 | Variável  | Valores | Informação |
 | ------------- | ------------- | ------------- |
-| **`lvlQuest03`** | `26 ~ 32`, `off` | Nível em que o personagem irá começar a Quest da **Instrutora Boya** de **nível 26**. `off` = desativa essa quest. |
-| **`lvlQuest04`** | `33 ~ 39`, `off` | Nível em que o personagem irá começar a Quest da **Instrutora Boya** de **nível 33**. `off` = desativa essa quest. |
-| **`lvlQuest05`** | `40 ~ 49`, `off` | Nível em que o personagem irá começar a Quest da **Instrutora Boya** de **nível 40**. `off` = desativa essa quest. |
-| **`lvlQuest07`** | `75 ~ 99`, `off` | Nível em que o personagem irá começar a Quest da **Instrutora Boya** de **nível 75**. `off` = desativa essa quest. |
-| **`lvlQuest08`** | `60 ~ 69`, `off` | Nível em que o personagem irá começar a Quest do **Instrutor Ur** de **nível 60**. `off` = desativa essa quest. |
-| **`lvlQuest09`** | `70 ~ 79`, `off` | Nível em que o personagem irá começar a Quest do **Instrutor Ur** de **nível 70**. `off` = desativa essa quest. |
-| **`lvlQuest10`** | `80 ~ 89`, `off` | Nível em que o personagem irá começar a Quest do **Instrutor Ur** de **nível 80**. `off` = desativa essa quest. |
-| **`lvlQuest11`** | `90 ~ 99`, `off` | Nível em que o personagem irá começar a Quest do **Instrutor Ur** de **nível 90**. `off` = desativa essa quest. |
+| **`lvlQuest03`** | `26 ~ 32`, `off` | Nível em que o personagem irá começar a Quest da **Instrutora Boya** de **nível 26**. |
+| **`lvlQuest04`** | `33 ~ 39`, `off` | Nível em que o personagem irá começar a Quest da **Instrutora Boya** de **nível 33**. |
+| **`lvlQuest05`** | `40 ~ 49`, `off` | Nível em que o personagem irá começar a Quest da **Instrutora Boya** de **nível 40**. |
+| **`lvlQuest07`** | `75 ~ 99`, `off` | Nível em que o personagem irá começar a Quest da **Instrutora Boya** de **nível 75**. |
+| **`lvlQuest08`** | `60 ~ 69`, `off` | Nível em que o personagem irá começar a Quest do **Instrutor Ur** de **nível 60**. |
+| **`lvlQuest09`** | `70 ~ 79`, `off` | Nível em que o personagem irá começar a Quest do **Instrutor Ur** de **nível 70**. |
+| **`lvlQuest10`** | `80 ~ 89`, `off` | Nível em que o personagem irá começar a Quest do **Instrutor Ur** de **nível 80**. |
+| **`lvlQuest11`** | `90 ~ 99`, `off` | Nível em que o personagem irá começar a Quest do **Instrutor Ur** de **nível 90**. |
 > `off` faz o plugin **ignorar completamente** a quest daquela faixa de nível, mesmo que o personagem esteja dentro do range.
 
 ---
