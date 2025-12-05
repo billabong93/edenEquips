@@ -32,6 +32,7 @@ COMBO_WIDTH   = 7     # largura dos Combobox em caracteres
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OPENKORE_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", ".."))
 CONTROL_DIR = os.path.join(OPENKORE_DIR, "control")
+PROFILES_DIR = os.path.join(OPENKORE_DIR, "profiles")
 CONFIG_FILE = os.path.join(CONTROL_DIR, "config.txt")
 
 if not os.path.isdir(CONTROL_DIR):
@@ -758,13 +759,13 @@ BLOCK_END   = "\n# --- Configurações do edenEquips --- END"
 # ==============================
 # Utilidades de arquivo config
 # ==============================
-def load_existing_values():
+def load_existing_values(config_file=CONFIG_FILE):
     """Chaves ausentes aparecem como (vazio)."""
     vals = {k: EMPTY_LABEL for k in options}
-    if not os.path.isfile(CONFIG_FILE):
+    if not os.path.isfile(config_file):
         return vals
     try:
-        with open(CONFIG_FILE, "r", encoding="utf-8", errors="ignore") as f:
+        with open(config_file, "r", encoding="utf-8", errors="ignore") as f:
             for line in f:
                 s = line.strip()
                 if not s or s.startswith("#"):
@@ -784,15 +785,15 @@ def allowed_with_empty(key):
     allowed = [str(v) for v in sorted(raw)]
     return [EMPTY_LABEL] + allowed
 
-def write_block_to_config(lines_to_write):
+def write_block_to_config(lines_to_write, config_file=CONFIG_FILE):
     """Escreve/substitui o bloco no config.txt, ignorando (vazio) e 0."""
     filtered = []
     for k, v in lines_to_write:
         if v not in (EMPTY_LABEL, "0", "", None):
             filtered.append(f"{k} {v}")
 
-    if os.path.isfile(CONFIG_FILE):
-        with open(CONFIG_FILE, "r", encoding="utf-8", errors="ignore") as f:
+    if os.path.isfile(config_file):
+        with open(config_file, "r", encoding="utf-8", errors="ignore") as f:
             content = f.read()
     else:
         content = ""
@@ -807,8 +808,22 @@ def write_block_to_config(lines_to_write):
     else:
         new_content = content_without_block + ("\n" if content_without_block and not content_without_block.endswith("\n") else "")
 
-    with open(CONFIG_FILE, "w", encoding="utf-8") as f:
+    with open(config_file, "w", encoding="utf-8") as f:
         f.write(new_content)
+
+
+def discover_config_targets():
+    """Retorna lista de (nome, caminho) para cada config.txt detectado."""
+    targets = [("control", os.path.join(CONTROL_DIR, "config.txt"))]
+
+    if os.path.isdir(PROFILES_DIR):
+        for name in sorted(os.listdir(PROFILES_DIR)):
+            profile_dir = os.path.join(PROFILES_DIR, name)
+            cfg = os.path.join(profile_dir, "config.txt")
+            if os.path.isdir(profile_dir) and os.path.isfile(cfg):
+                targets.append((name, cfg))
+
+    return targets
 
 # ==============================
 # GUI (Tkinter)
@@ -825,8 +840,13 @@ class ConfigApp(tk.Tk):
         # Fundo geral
         self.configure(bg="#e6e6e6")
 
+        self.config_targets = discover_config_targets()
+        self.config_files = {name: path for name, path in self.config_targets}
+        self.current_config_name = self.config_targets[0][0]
+        self.current_config_file = self.config_files[self.current_config_name]
+
         # Valores atuais lidos do config.txt
-        self.current_values = load_existing_values()
+        self.current_values = load_existing_values(self.current_config_file)
 
         # Estruturas internas
         self.inputs = {}          # key -> Combobox (todas as abas)
@@ -1029,6 +1049,21 @@ class ConfigApp(tk.Tk):
         # ---------- BOTÕES INFERIORES ----------
         btns = ttk.Frame(self, style="App.TFrame")
         btns.pack(fill="x", padx=16, pady=(0, 12))
+        selector = ttk.Frame(btns, style="App.TFrame")
+        selector.pack(side="left", padx=(0, 10))
+
+        ttk.Label(selector, text="Perfil:").pack(side="left", padx=(0, 6))
+        self.profile_var = tk.StringVar(value=self.current_config_name)
+        self.profile_select = ttk.Combobox(
+            selector,
+            values=[name for name, _ in self.config_targets],
+            textvariable=self.profile_var,
+            state="readonly",
+            width=14,
+        )
+        self.profile_select.bind("<<ComboboxSelected>>", self._on_profile_change)
+        self.profile_select.pack(side="left")
+
         ttk.Button(btns, text="Restaurar para (vazio)", command=self.restore_default).pack(side="left")
         ttk.Button(btns, text="Salvar e Fechar", command=self.save_and_close).pack(side="right")
         ttk.Button(btns, text="Cancelar", command=self.destroy).pack(side="right", padx=(0, 8))
@@ -1057,6 +1092,17 @@ class ConfigApp(tk.Tk):
     def _on_mousewheel(self, event):
         if self._active_canvas is not None:
             self._active_canvas.yview_scroll(int(-1 * (event.delta / 20)), "units")
+
+    # --------- Troca de perfil/config.txt
+    def _on_profile_change(self, event=None):
+        name = self.profile_var.get()
+        if name not in self.config_files:
+            return
+
+        self.current_config_name = name
+        self.current_config_file = self.config_files[name]
+        self.current_values = load_existing_values(self.current_config_file)
+        self._populate_rows()
 
     # --------- Troca de aba
     def _on_tab_changed(self, event):
@@ -1248,11 +1294,14 @@ class ConfigApp(tk.Tk):
                 val = self.current_values.get(key, EMPTY_LABEL)
             lines.append((key, val))
         try:
-            write_block_to_config(lines)
+            write_block_to_config(lines, self.current_config_file)
         except Exception as e:
-            messagebox.showerror("Erro ao salvar", f"Falha ao escrever no arquivo:\n{CONFIG_FILE}\n\n{e}")
+            messagebox.showerror(
+                "Erro ao salvar",
+                f"Falha ao escrever no arquivo:\n{self.current_config_file}\n\n{e}",
+            )
             return
-        messagebox.showinfo("Sucesso", f"Configurações salvas em:\n{CONFIG_FILE}")
+        messagebox.showinfo("Sucesso", f"Configurações salvas em:\n{self.current_config_file}")
         self.destroy()
 
 # ==============================
