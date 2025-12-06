@@ -412,7 +412,7 @@ Todas as variáveis abaixo usam `0` = **Desativado** (padrão) e `1` = **Ativado
 
 
 ### 💵 Investimento 
-* **R$30** / **HWID**
+* **R$30** / **HWID** - Pagamento único.
 * É possível solicitar um trial de 1 dia **sem compromisso**.
 
 
