@@ -89,6 +89,7 @@ HWID necessário para ativação.
     As variáveis criadas são lidas pelo plugin durante a execução.
   - Adicione *edenEquips* em **sys.txt** no final da linha *loadPlugins_list*.
   - Em caso de necessidade de reinjeção, use *'plugin reload edenEquips'* no console.
+  - O HWID é gerado após o personagem estar online.
 
 ---
 
