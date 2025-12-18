@@ -1,4 +1,4 @@
-## ⚜️ edenEquips v2.0.1 (LATAM)
+## ⚜️ edenEquips v2.0.2 (LATAM)
 [<img alt="Static Badge" target="_blank" src="https://img.shields.io/badge/Discord-.boscv-%237289DA?logo=discord&logoColor=%23fff">](https://discord.com/users/boscv.)\
 [<img alt="Static Badge" src="https://img.shields.io/badge/Discord-Openkore%20LATAM-%237289DA?logo=discord&logoColor=%23fff">](https://discord.com/channels/1396892709775605922)\
 [<img alt="Static Badge" src="https://img.shields.io/badge/F%C3%B3rum-Openkore%20LATAM-%23ec8736?logo=phpBB&logoColor=%23fff">](https://openkore.com.br/)
@@ -33,6 +33,8 @@ HWID necessário para ativação.
     - [Arunafeltz [100]](#arunafeltz-100)
     - [Torre de Thanatos [110]](#torre-de-thanatos-110)
     - [Ruínas de Juperos [110]](#ru%C3%ADnas-de-juperos-110)
+    - [Templo de Odin [120]](#templo-de-odin-120)
+    - [Lago do Abismo [120]](#lago-do-abismo-120)
   - [👑 Equipamentos Éden [100+]](#-equipamentos-%C3%A9den-100)
     - [Equipamentos [100]](#equipamentos-100)
     - [Equipamentos [115]](#equipamentos-115)
@@ -52,7 +54,7 @@ HWID necessário para ativação.
   - **Resgate de equipamentos** dos níveis 7 ao 160.
   - **Quests da Instrutora Boya** dos níveis 26, 33, 40 e 75.
   - **Quests do Instrutor Ur** dos níveis 60, 70, 80 e 90.
-  - **Quests do Éden** dos níveis 100, 110.
+  - **Quests do Éden** dos níveis 100+.
   - **Quests Primeiros Passos** para Aprendiz.
   - **Quests Tutoriais** para Aprendiz (Apenas as que dão consumíveis).
 
@@ -89,6 +91,7 @@ HWID necessário para ativação.
     As variáveis criadas são lidas pelo plugin durante a execução.
   - Adicione *edenEquips* em **sys.txt** no final da linha *loadPlugins_list*.
   - Em caso de necessidade de reinjeção, use *'plugin reload edenEquips'* no console.
+  - O HWID é gerado após o personagem estar online.
 
 ---
 
@@ -236,7 +239,7 @@ HWID necessário para ativação.
 
 ---
 
-### ⚡ Quests do Éden [100–110]
+### ⚡ Quests do Éden [100+]
 
 Todas as variáveis abaixo usam `0` = **Desativado** (padrão) e `1` = **Ativado**.
 
@@ -244,7 +247,7 @@ Todas as variáveis abaixo usam `0` = **Desativado** (padrão) e `1` = **Ativado
 
 | Variável  | Valores | Informação |
 | --------- | ------- | ---------- |
-| **`quests100_110`** | `0 ~ 1` | Ativa/desativa globalmente as **Quests do Éden 100–110**. |
+| **`quests100`** | `0 ~ 1` | Ativa/desativa globalmente as **Quests do Éden 100+**. |
 > As variáveis abaixo ativam/desativam cada quest individualmente.
 
 #### Caverna de Magma [100]
@@ -316,6 +319,22 @@ Todas as variáveis abaixo usam `0` = **Desativado** (padrão) e `1` = **Ativado
 | **`jupe110_1`** | `0 ~ 1` | Eliminar **Venatu (Roxo/Verde)**. |
 | **`jupe110_2`** | `0 ~ 1` | Eliminar **Dimik (Verde/Azul)**. |
 | **`jupe110_3`** | `0 ~ 1` | Eliminar **Dimik (Vermelho/Laranja)**. |
+
+#### Templo de Odin [120]
+
+| Variável  | Valores | Informação |
+| --------- | ------- | ---------- |
+| **`odin120_0`** | `0 ~ 1` | Eliminar **Skogul**. |
+| **`odin120_1`** | `0 ~ 1` | Eliminar **Frus**. |
+| **`odin120_2`** | `0 ~ 1` | Eliminar **Skeggiold (Azul/Marrom)**. |
+
+#### Lago do Abismo [120]
+
+| Variável  | Valores | Informação |
+| --------- | ------- | ---------- |
+| **`abyss120_0`** | `0 ~ 1` | Eliminar **Ferus (Verde/Escarlate)**. |
+| **`abyss120_1`** | `0 ~ 1` | Eliminar **Acidus (Azul/Dourado)**. |
+| **`abyss120_2`** | `0 ~ 1` | Eliminar **Hydrolancer**. 
 
 ---
 
@@ -412,7 +431,7 @@ Todas as variáveis abaixo usam `0` = **Desativado** (padrão) e `1` = **Ativado
 
 
 ### 💵 Investimento 
-* **R$30** / **HWID**
+* **R$30** / **HWID** - Pagamento único.
 * É possível solicitar um trial de 1 dia **sem compromisso**.
 
 
