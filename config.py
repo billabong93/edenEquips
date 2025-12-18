@@ -152,7 +152,7 @@ options = {
     },
     # 100–110
     "quests100": {
-        "group": "Quests [100-110]",
+        "group": "Quests [100+]",
         "label": "Ativar Quests [100+]",
         "desc": "Permite o personagem fazer as Quests do Éden de nível 100+.\n\nEvite saturar a quantidade de Quests. Seu personagem pode não dar conta.\nComo as Quests anteriores, essas usam telesearch.\nAsa de Mosca (ou relativos) são indispensáveis para conclusão dessas Quests.\nA configuração de autoBuy de consumíveis é de responsabilidade do usuário.\nNão ative essa opção sem items que possibilitam o teleporte.\n\nOpções:\n0 = Desativado (padrão) \n1 = Ativado",
         "default": "0",
@@ -439,7 +439,7 @@ options = {
         "allowed": {"0", "1"},
     },
     "quests100": {
-        "group": "Quests [120-140]",
+        "group": "Quests [100+]",
         "label": "Ativar Quests [100+]",
         "desc": "Permite o personagem fazer as Quests do Éden de nível 100+.\n\nEvite saturar a quantidade de Quests. Seu personagem pode não dar conta.\nComo as Quests anteriores, essas usam telesearch.\nAsa de Mosca (ou relativos) são indispensáveis para conclusão dessas Quests.\nA configuração de autoBuy de consumíveis é de responsabilidade do usuário.\nNão ative essa opção sem items que possibilitam o teleporte.\n\nOpções:\n0 = Desativado (padrão) \n1 = Ativado",
         "default": "0",
