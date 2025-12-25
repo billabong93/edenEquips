@@ -94,7 +94,7 @@ options = {
     "armaII": {
         "group": "Arma do Éden II",
         "label": "Arma do Éden II",
-        "desc": "ESCOLHA A ARMA DO ÉDEN II \n\nArmas para as classes: \nEspadachim, Cavaleiro, Templário, Noviço, Sacerdote, Monge, Mercador, Ferreiro, Alquimista, Espiritualista.\n(https://browiki.org/wiki/Equipamentos_do_Éden#Armas) \n\nOpções: \n0 = Sabre / Cetro / Adaga (padrão) \n1 = Espada / Maça / Cetro",
+        "desc": "ESCOLHA A ARMA DO ÉDEN II \n\nArmas para as classes: \nEspadachim, Cavaleiro, Templário, Noviço, Sacerdote, Monge, Mercador, Ferreiro, Alquimista, Espiritualista.\n(https://browiki.org/wiki/Equipamentos_do_Éden#Armas) \n\nOpções: \n0 = Espada / Cetro / Adaga (padrão) \n1 = Sabre / Maça / Cetro",
         "default": "0",
         "allowed": {"0", "1"},
     },
@@ -128,7 +128,6 @@ options = {
         "default": "0",
         "allowed": {"0", "1"},
     },
-
     "lvlQuest10": {
         "group": "Encantamentos e Cartas",
         "label": "Nível da Quest [80–89]",
@@ -139,7 +138,7 @@ options = {
     "carta": {
         "group": "Encantamentos e Cartas",
         "label": "Tipo de Carta",
-        "desc": "ESCOLHA AS CARTAS \n\n+20% DMG / +10% MDMG ou +3% HEAL. \n\nOpções: \n0 = Bruto(Padrão) \n1 = Planta \n2 = Inseto \n3 = Peixe \n4 = Dragão \n5 = Cura",
+        "desc": "ESCOLHA AS CARTAS \n\n+20% DMG / +10% MDMG ou +3% HEAL. \n\nOpções: \n0 = Bruto(padrão) \n1 = Planta \n2 = Inseto \n3 = Peixe \n4 = Dragão \n5 = Cura",
         "default": "0",
         "allowed": num_range(0, 5),
     },
@@ -708,35 +707,56 @@ options = {
     "classe1": {
         "group": "1ª Classe",
         "label": "Troca de Classe 1",
-        "desc": "Escolha a 1ª do seu personagem.\n(Academia Criatura)\n\nClasses:\n1 = Espadachim\t\t2 = Mago\n3 = Arqueiro\t\t4 = Noviço\n5 = Mercador\t\t6 = Gatuno\n\nOpções:\n0 = Desativado (padrão) \n1-6 = Ativado",
+        "desc": "Escolha a 1ª classe do seu personagem. (Academia Criatura)\n\nClasses:\n1 = Espadachim\t\t\t\t2 = Mago\n3 = Arqueiro\t\t\t\t4 = Noviço\n5 = Mercador\t\t\t\t6 = Gatuno\n\nOpções:\n0 = Desativado (padrão) \n1-6 = Ativado",
         "default": "0",
         "allowed": num_range(0, 6),
     },
+    "classe2": {
+        "group": "2ª Classe",
+        "label": "Troca de Classe 2",
+        "desc": "Escolha a 2ª classe do seu personagem.\nEssa opção habilita todas as evoluções de classe subsequentes.\n*ATUALMENTE APENAS A QUEST DE ARRUACEIRO ESTÁ DISPONÍVEL*\n\nClasses:\n1 = Cavaleiro\t\t\t\t2 = Templário\n1 = Bruxo\t\t\t\t2 = Sábio\n1 = Caçador\t\t\t\t2 = Bardo/Odalisca\n1 = Sacerdote\t\t\t\t2 = Monge\n1 = Ferreiro\t\t\t\t2 = Alquimista\n1 = Mercenário\t\t\t\t2 = Arruaceiro\n\nOpções:\n0 = Desativado (padrão) \n1 = Classe 2-1\t\t\t\t2 = Classe 2-2",
+        "default": "0",
+        "allowed": num_range(0, 2),
+    },
+    "lvlClasse2": {
+        "group": "2ª Classe",
+        "label": "Nível da Classe 2",
+        "desc": "Escolha o nível mínimo em que quer que seu personagem faça a quest da 2ª classe.\nEssa configuração vale tanto para 1ª classe quanto para transclasse.\n\n*ATUALMENTE APENAS A QUEST DE ARRUACEIRO ESTÁ DISPONÍVEL*\n\nOpções:\n40 = (padrão)",
+        "default": "40",
+        "allowed": num_range(40, 50),
+    },
     "1sPassos": {
-        "group": "Quests Misc.",
+        "group": "Quest de Tutorial",
         "label": "Primeiros Passos",
         "desc": "Ativar quest 'Primeiros Passos'.\n\nRecompensas:\n5x Lupa de Iniciante\t\t\t\t5x Suco de Banana\n60x Poção de Aprendiz\t\t\t\t20x Asa de Mosca de Iniciante\n10x Asa de Borboleta de Iniciante\t\t\t\t5x Maçã Dura\n1x Livro de Culinária Iniciante\t\t\t\t1x Erva Vermelha\n1x Maçã\t\t\t\t20x Kit de Culinária Iniciante\n\nOpções:\n0 = Desativado (padrão) \n1 = Ativado",
         "default": "0",
         "allowed": {"0", "1"},
     },
     "aulaDeConsu": {
-        "group": "Quests Misc.",
+        "group": "Quest de Tutorial",
         "label": "Aula de Consumíveis",
         "desc": "Ativar quest 'Aula de Consumíveis'.\n\nRecompensas:\n30x Poção de Aprendiz\n\nOpções:\n0 = Desativado (padrão) \n1 = Ativado",
         "default": "0",
         "allowed": {"0", "1"},
     },
     "aulaDeLoc": {
-        "group": "Quests Misc.",
+        "group": "Quest de Tutorial",
         "label": "Aula de Localização",
         "desc": "Ativar quest 'Aula de Localização'.\n\nRecompensas:\n20x Asa de Mosca de Iniciante\n10x Asa de Borboleta de Iniciante\n20x Poção de Aprendiz\n\nOpções:\n0 = Desativado (padrão) \n1 = Ativado",
         "default": "0",
         "allowed": {"0", "1"},
     },
     "aulaDeVenda": {
-        "group": "Quests Misc.",
+        "group": "Quest de Tutorial",
         "label": "Aula de Venda",
         "desc": "Ativar quest 'Aula de Venda'.\n\nRecompensas:\n10x Asa de Borboleta de Iniciante\n\nOpções:\n0 = Desativado (padrão) \n1 = Ativado",
+        "default": "0",
+        "allowed": {"0", "1"},
+    },
+    "rota": {
+        "group": "Rotas de UP",
+        "label": "0-99",
+        "desc": "prt_fild08 > pay_fild08 > pay_fild07 > pay_fild09 > gef_fild10 > orcsdun_01 > moc_fild17 > yuno_fild08 > yuno_fild11 > ve_fild07\n\nOpções:\n0 = Desativado (padrão) \n1 = Ativado",
         "default": "0",
         "allowed": {"0", "1"},
     },
@@ -799,10 +819,10 @@ TAB_DEFS = [
         "equips160", "anelV", "colarV", "fardaV", "coturV", "mantoIII", "boinaII",
     ]),
     ("Quests de Classe", [ 
-        "classe1",
+        "1sPassos", "aulaDeConsu", "aulaDeLoc", "aulaDeVenda", "classe1", "classe2", "lvlClasse2",
     ]),
     ("Misc.", [ 
-        "1sPassos", "aulaDeConsu", "aulaDeLoc", "aulaDeVenda", "novoMundo",
+        "rota", "novoMundo",
         "semAsas", "semPot",
     ]),
 ]
