@@ -67,9 +67,8 @@ HWID necessário para ativação.
 
 ## 📝 Instruções:
 
-  - Use **config.py** para configurar suas opções de equipamentos, encantamentos e cartas. Se não houver escolha de equipamentos disponível para sua classe, escolha [0]. As opções escolhidas são salvas no final do **config.txt**. As opções por padrão são [0]. No caso de [0], não é criada uma variável.
-    Você também pode inserir as variáveis manualmente no **config.txt** ou usar o comando *'conf -f'* no console do openkore, ex *'conf -f semPot 1'*.
-    As variáveis criadas são lidas pelo plugin durante a execução.
+  - Use **config.py** para configurar suas opções de quests, níveis, equipamentos, encantamentos, cartas e consumíveis.
+    Nele, há explicações sobre cada configuração e suas respectivas funções.
   - Adicione *edenEquips* em **sys.txt** no final da linha *loadPlugins_list*.
   - Em caso de necessidade de reinjeção, use *'plugin reload edenEquips'* no console.
   - O HWID é gerado após o personagem estar online.
