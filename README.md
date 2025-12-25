@@ -23,7 +23,7 @@ HWID necessário para ativação.
  
 ---
 
-## 📜 Quests Incluídas (Para todas as classes)
+## 📜 Quests Incluídas
 
   - **Resgate de equipamentos** dos níveis 7 ao 160.
   - **Quests da Instrutora Boya** dos níveis 26, 33, 40 e 75.
