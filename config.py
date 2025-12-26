@@ -72,7 +72,7 @@ options = {
     "armaI": {
         "group": "Arma do Éden I",
         "label": "Arma do Éden I",
-        "desc": "ESCOLHA A ARMA DO ÉDEN I \n\nArmas para as classes:\nEspadachim, Noviço, Mercador.\n(https://browiki.org/wiki/Equipamentos_do_Éden#Armas) \n\nOpções: \n0 = Sabre / Cetro (padrão)\n1 = Espada / Maça",
+        "desc": "ESCOLHA A ARMA DO ÉDEN I \n\nArmas para as classes:\nEspadachim, Noviço, Mercador.\n(https://browiki.org/wiki/Equipamentos_do_Éden#Armas) \n\nOpções: \n0 = Espada / Cetro (padrão)\n1 = Sabre / Maça",
         "default": "0",
         "allowed": {"0", "1"},
     },
@@ -94,7 +94,7 @@ options = {
     "armaII": {
         "group": "Arma do Éden II",
         "label": "Arma do Éden II",
-        "desc": "ESCOLHA A ARMA DO ÉDEN II \n\nArmas para as classes: \nEspadachim, Cavaleiro, Templário, Noviço, Sacerdote, Monge, Mercador, Ferreiro, Alquimista, Espiritualista.\n(https://browiki.org/wiki/Equipamentos_do_Éden#Armas) \n\nOpções: \n0 = Espada / Cetro / Adaga (padrão) \n1 = Sabre / Maça / Cetro",
+        "desc": "ESCOLHA A ARMA DO ÉDEN II \n\nArmas para as classes: \nEspadachim, Cavaleiro, Templário, Noviço, Sacerdote, Monge, Mercador, Ferreiro, Alquimista, Espiritualista.\n(https://browiki.org/wiki/Equipamentos_do_Éden#Armas) \n\nOpções: \n0 = Sabre / Cetro / Adaga (padrão) \n1 = Espada / Maça / Cetro",
         "default": "0",
         "allowed": {"0", "1"},
     },
@@ -756,7 +756,7 @@ options = {
     "rota": {
         "group": "Rotas de UP",
         "label": "0-99",
-        "desc": "prt_fild08 > pay_fild08 > pay_fild07 > pay_fild09 > gef_fild10 > orcsdun_01 > moc_fild17 > yuno_fild08 > yuno_fild11 > ve_fild07\n\nOpções:\n0 = Desativado (padrão) \n1 = Ativado",
+        "desc": "prt_fild08 > pay_fild08 > pay_dun00 > pay_fild07 > pay_fild09 > iz_dun01 > iz_dun02 > moc_fild17 > yuno_fild08 > yuno_fild11 > ve_fild07\n\nOpções:\n0 = Desativado (padrão) \n1 = Ativado",
         "default": "0",
         "allowed": {"0", "1"},
     },
@@ -770,14 +770,15 @@ options = {
     "semAsas": {
         "group": "Consumíveis",
         "label": "Sem Asas de Mosquito",
-        "desc": "Desativar compra de Asas de Mosquito.\n\nOpções:\n0 = Desativado (padrão) \n1 = Ativado",
+        "desc": "Desativar compra de Asas de Mosquito nas Quests do Éden.\n\nOpções:\n0 = Desativado (padrão) \n1 = Ativado",
         "default": "0",
         "allowed": {"0", "1"},
     },
     "semPot": {
         "group": "Consumíveis",
         "label": "Sem Poção Laranja",
-        "desc": "Desativar compra de Poção Laranja.\n\nOpções:\n0 = Desativado (padrão) \n1 = Ativado",
+        "desc": "Desativar compra de Poção Laranja nas Quests do Éden.\n\nOpções:\n0 = Desativado (padrão) \n1 = Ativado",
+        "desc": "Desativar compra de Poção Laranja nas Quests do Éden.\n\nOpções:\n0 = Desativado (padrão) \n1 = Ativado",
         "default": "0",
         "allowed": {"0", "1"},
     },
