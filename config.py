@@ -714,14 +714,14 @@ options = {
     "classe2": {
         "group": "2ª Classe",
         "label": "Troca de Classe 2",
-        "desc": "Escolha a 2ª classe do seu personagem.\nEssa opção habilita todas as evoluções de classe subsequentes.\n*ATUALMENTE APENAS A QUEST DE ARRUACEIRO ESTÁ DISPONÍVEL*\n\nClasses:\n1 = Cavaleiro\t\t\t\t2 = Templário\n1 = Bruxo\t\t\t\t2 = Sábio\n1 = Caçador\t\t\t\t2 = Bardo/Odalisca\n1 = Sacerdote\t\t\t\t2 = Monge\n1 = Ferreiro\t\t\t\t2 = Alquimista\n1 = Mercenário\t\t\t\t2 = Arruaceiro\n\nOpções:\n0 = Desativado (padrão) \n1 = Classe 2-1\t\t\t\t2 = Classe 2-2",
+        "desc": "Escolha a 2ª classe do seu personagem.\nEssa opção habilita todas as evoluções de classe subsequentes.\n*ATUALMENTE APENAS A QUEST DE ROGUE E KNIGHT ESTÃO DISPONÍVEIS*\n\nClasses:\n1 = Cavaleiro\t\t\t\t2 = Templário\n1 = Bruxo\t\t\t\t2 = Sábio\n1 = Caçador\t\t\t\t2 = Bardo/Odalisca\n1 = Sacerdote\t\t\t\t2 = Monge\n1 = Ferreiro\t\t\t\t2 = Alquimista\n1 = Mercenário\t\t\t\t2 = Arruaceiro\n\nOpções:\n0 = Desativado (padrão) \n1 = Classe 2-1\t\t\t\t2 = Classe 2-2",
         "default": "0",
         "allowed": num_range(0, 2),
     },
     "lvlClasse2": {
         "group": "2ª Classe",
         "label": "Nível da Classe 2",
-        "desc": "Escolha o nível mínimo em que quer que seu personagem faça a quest da 2ª classe.\nEssa configuração vale tanto para 1ª classe quanto para transclasse.\n\n*ATUALMENTE APENAS A QUEST DE ARRUACEIRO ESTÁ DISPONÍVEL*\n\nOpções:\n40 = (padrão)",
+        "desc": "Escolha o nível mínimo em que quer que seu personagem faça a quest da 2ª classe.\nEssa configuração vale tanto para 1ª classe quanto para transclasse.\n\n*ATUALMENTE APENAS A QUEST DE ROGUE E KNIGHT ESTÃO DISPONÍVEIS*\n\nOpções:\n40 = (padrão)",
         "default": "40",
         "allowed": num_range(40, 50),
     },
@@ -756,9 +756,9 @@ options = {
     "rota": {
         "group": "Rotas de UP",
         "label": "0-99",
-        "desc": "prt_fild08 > pay_fild08 > pay_dun00 > pay_fild07 > pay_fild09 > iz_dun01 > iz_dun02 > moc_fild17 > yuno_fild08 > yuno_fild11 > ve_fild07\n\nOpções:\n0 = Desativado (padrão) \n1 = Ativado",
+        "desc": "Rota 1:\nprt_fild08 > pay_fild08 > pay_fild07 > pay_fild09 > iz_dun01 > iz_dun02 > moc_fild17 > yuno_fild08 > yuno_fild11 > ve_fild07\n\nRota 2:\nprt_fild08 > pay_fild08 > pay_fild07 > pay_fild09 > gef_fild10 > orcsdun01 > mjolnir_08 > mjolnir_04 > gef_fild08 > gef_fild06\n\nOpções:\n0 = Desativado (padrão) \n1 = Rota 1\n2 = Rota 2",
         "default": "0",
-        "allowed": {"0", "1"},
+        "allowed": num_range(0, 2),
     },
     "novoMundo": {
         "group": "Quests Misc.",
