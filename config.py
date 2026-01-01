@@ -76,7 +76,6 @@ options = {
         "default": "0",
         "allowed": {"0", "1"},
     },
-
     "lvlQuest05": {
         "group": "Arma do Éden II",
         "label": "Nível da Quest [40–49]",
@@ -98,7 +97,6 @@ options = {
         "default": "0",
         "allowed": {"0", "1"},
     },
-
     "lvlQuest08": {
         "group": "Arma do Éden III",
         "label": "Nível da Quest [60–69]",
@@ -113,7 +111,6 @@ options = {
         "default": "0",
         "allowed": {"0", "1", "2"},
     },
-
     "lvlQuest09": {
         "group": "Encantamentos e Cartas",
         "label": "Nível da Quest [70–79]",
@@ -725,6 +722,13 @@ options = {
         "default": "40",
         "allowed": num_range(40, 50),
     },
+    "reborn": {
+        "group": "Quest de Renascimento",
+        "label": "Renascimento",
+        "desc": "Ativar quest 'Renascimento'.\nMetheus Sylphe disse que me mostrará o Livro de Ymir se eu lhe trouxer de volta um livro que fugiu da biblioteca. Vá para os arredores de Juno e elimine o Livro Fugitivo para conseguir 1 Livro Capturado.\n\nRequisitos:\nNível: 99\n2ª classe\n\nOpções:\n0 = Desativado (padrão) \n1 = Ativado",
+        "default": "0",
+        "allowed": {"0", "1"},
+    },
     "1sPassos": {
         "group": "Quest de Tutorial",
         "label": "Primeiros Passos",
@@ -820,7 +824,7 @@ TAB_DEFS = [
         "equips160", "anelV", "colarV", "fardaV", "coturV", "mantoIII", "boinaII",
     ]),
     ("Quests de Classe", [ 
-        "1sPassos", "aulaDeConsu", "aulaDeLoc", "aulaDeVenda", "classe1", "classe2", "lvlClasse2",
+        "1sPassos", "aulaDeConsu", "aulaDeLoc", "aulaDeVenda", "classe1", "classe2", "lvlClasse2", "reborn",
     ]),
     ("Misc.", [ 
         "rota", "novoMundo",
