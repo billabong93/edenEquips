@@ -725,9 +725,9 @@ options = {
     "reborn": {
         "group": "Quest de Renascimento",
         "label": "Renascimento",
-        "desc": "Ativar quest 'Renascimento'.\nMetheus Sylphe disse que me mostrará o Livro de Ymir se eu lhe trouxer de volta um livro que fugiu da biblioteca. Vá para os arredores de Juno e elimine o Livro Fugitivo para conseguir 1 Livro Capturado.\n\nRequisitos:\nNível: 99\n2ª classe\n\nOpções:\n0 = Desativado (padrão) \n1 = Ativado",
+        "desc": "Ativar quest 'Renascimento'.\n\nRequisitos:\nNível: 99\n2ª Classe\n1.285.000 Zenys ou 1 Livro Capturado\n\nOpções:\n0 = Desativado (padrão) \n1 = Livro Capturado\n2 = 1.285.000 Zenys",
         "default": "0",
-        "allowed": {"0", "1"},
+        "allowed": num_range(0, 2),
     },
     "1sPassos": {
         "group": "Quest de Tutorial",
