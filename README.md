@@ -32,7 +32,7 @@ HWID necessário para ativação.
   - **Quests Primeiros Passos** para Aprendiz.
   - **Quests Tutoriais** para Aprendiz (Apenas as que dão consumíveis).
   - **Quest do Novo Mundo** da Agência Pata de Gato.
-  - **Quests de Renascimento** do Livro Fugitivo.
+  - **Quests de Renascimento**, pagando ou capturando o Livro Fugitivo.
   - **1ª Mudança de Classe** para as classes principais.
   - **2ª Mudança de Classe à Transclasse** para Stalker.
 
