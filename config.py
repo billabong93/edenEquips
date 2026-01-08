@@ -711,14 +711,14 @@ options = {
     "classe2": {
         "group": "2ª Classe",
         "label": "Troca de Classe 2",
-        "desc": "Escolha a 2ª classe do seu personagem.\nEssa opção habilita todas as evoluções de classe subsequentes.\n*ATUALMENTE APENAS A QUEST DE ROGUE E KNIGHT ESTÃO DISPONÍVEIS*\n\nClasses:\n1 = Cavaleiro\t\t\t\t2 = Templário\n1 = Bruxo\t\t\t\t2 = Sábio\n1 = Caçador\t\t\t\t2 = Bardo/Odalisca\n1 = Sacerdote\t\t\t\t2 = Monge\n1 = Ferreiro\t\t\t\t2 = Alquimista\n1 = Mercenário\t\t\t\t2 = Arruaceiro\n\nOpções:\n0 = Desativado (padrão) \n1 = Classe 2-1\t\t\t\t2 = Classe 2-2",
+        "desc": "Escolha a 2ª classe do seu personagem.\nEssa opção habilita todas as evoluções de classe subsequentes. Disponíveis apenas (e evoluções até transclasse) Cavaleiro, Monge e Arruaceiro. \n\nClasses:\n1 = Cavaleiro\t\t\t\t2 = Templário\n1 = Bruxo\t\t\t\t2 = Sábio\n1 = Caçador\t\t\t\t2 = Bardo/Odalisca\n1 = Sacerdote\t\t\t\t2 = Monge\n1 = Ferreiro\t\t\t\t2 = Alquimista\n1 = Mercenário\t\t\t\t2 = Arruaceiro\n\nOpções:\n0 = Desativado (padrão) \n1 = Classe 2-1\t\t\t\t2 = Classe 2-2",
         "default": "0",
         "allowed": num_range(0, 2),
     },
     "lvlClasse2": {
         "group": "2ª Classe",
         "label": "Nível da Classe 2",
-        "desc": "Escolha o nível mínimo em que quer que seu personagem faça a quest da 2ª classe.\nEssa configuração vale tanto para 1ª classe quanto para transclasse.\n\n*ATUALMENTE APENAS A QUEST DE ROGUE E KNIGHT ESTÃO DISPONÍVEIS*\n\nOpções:\n40 = (padrão)",
+        "desc": "Escolha o nível mínimo em que quer que seu personagem faça a quest da 2ª classe.\nEssa configuração vale apenas para 2ª classe.\n\nOpções:\n40 = (padrão)",
         "default": "40",
         "allowed": num_range(40, 50),
     },
@@ -768,6 +768,13 @@ options = {
         "group": "Quests Misc.",
         "label": "Quest Novo Mundo",
         "desc": "A Agência Pata de Gato está oferecendo um método mais rápido para acessar o Novo Mundo, mas com um pequeno custo inicial, é claro!\n\nRequisitos:\nNível: 80+\nZeny: 50.000\n\nOpções:\n0 = Desativado (padrão) \n1 = Ativado",
+        "default": "0",
+        "allowed": {"0", "1"},
+    },
+    "trocarPot": {
+        "group": "Máquina de Venda",
+        "label": "Trocar Eq. Aprendiz por Pots",
+        "desc": "Troca equipamentos de Aprendiz por Vale-Armazém, e Vale-Armazém por Poções de Aprendiz na máquina de venda automática para iniciantes no Grupo do Éden, depois de virar 1ª classe.\n\n4x Vale-Armazém = 30x Poção de Aprendiz\n\nOpções:\n0 = Desativado (padrão) \n1 = Ativado",
         "default": "0",
         "allowed": {"0", "1"},
     },
@@ -827,7 +834,7 @@ TAB_DEFS = [
         "1sPassos", "aulaDeConsu", "aulaDeLoc", "aulaDeVenda", "classe1", "classe2", "lvlClasse2", "reborn",
     ]),
     ("Misc.", [ 
-        "rota", "novoMundo",
+        "rota", "novoMundo", "trocarPot",
         "semAsas", "semPot",
     ]),
 ]
@@ -1107,6 +1114,7 @@ class ConfigApp(tk.Tk):
             desc.tag_bind("link", "<Enter>", lambda e, d=desc: d.config(cursor="hand2"))
             desc.tag_bind("link", "<Leave>", lambda e, d=desc: d.config(cursor=""))
             desc.tag_bind("link", "<Button-1>", self._on_link_click)
+
 
             # guarda referência desta aba
             self.tab_frames[tab_title] = {

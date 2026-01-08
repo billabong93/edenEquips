@@ -1,4 +1,4 @@
-## ⚜️ edenEquips v2.2.2 (LATAM)
+## ⚜️ edenEquips v2.3.1 (LATAM)
 [<img alt="Static Badge" target="_blank" src="https://img.shields.io/badge/Discord-.boscv-%237289DA?logo=discord&logoColor=%23fff">](https://discord.com/users/boscv.)\
 [<img alt="Static Badge" src="https://img.shields.io/badge/Discord-Openkore%20LATAM-%237289DA?logo=discord&logoColor=%23fff">](https://discord.com/channels/1396892709775605922)\
 [<img alt="Static Badge" src="https://img.shields.io/badge/F%C3%B3rum-Openkore%20LATAM-%23ec8736?logo=phpBB&logoColor=%23fff">](https://openkore.com.br/)
@@ -34,13 +34,13 @@ HWID necessário para ativação.
   - **Quest do Novo Mundo** da Agência Pata de Gato.
   - **Quests de Renascimento**, pagando ou capturando o Livro Fugitivo.
   - **1ª Mudança de Classe** para as classes principais.
-  - **2ª Mudança de Classe à Transclasse** para Stalker.
+  - **2ª Mudança de Classe à Transclasse** para Lorde, Mestre e Desordeiro.
 
 ---
 
 ## 🤖 Funções Principais:
 
-  - **Mudança de classe** para 1ª classe, e 2ª classe à transclasse (Apenas Stalker e Kina no nomento).
+  - **Mudança de classe** para 1ª classe, e 2ª classe à transclasse.
   - **Rotas de UP** para agilizar e facilitar seu trabalho.
   - **Configuração personalizada** de equipamentos, encantamentos e cartas.
   - **Escolha o nível** em que quer que o personagem inicie as quests (26-90).
