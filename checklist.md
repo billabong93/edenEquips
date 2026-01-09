@@ -5,6 +5,56 @@ Este documento lista **somente** as **condições** de cada `automacro`, agrupad
 - Fonte: `eventMacros.txt` (11831 linhas)
 - Automacros encontrados: **352**
 
+
+## Glossário (somente condições usadas no seu `eventMacros.txt`)
+
+### Configuração
+**ConfigKey** - Verdadeiro quando uma ou mais chaves do `config.txt` possuem os valores informados (aceita lista do tipo `chave valor, chave valor...`).  
+**ConfigKeyNot** - Verdadeiro quando a chave existe e o valor **não** é o informado.  
+**ConfigKeyNotExist** - Verdadeiro quando a chave **não existe** no `config.txt` carregado.  
+**ConfigKeyDefined** - Verdadeiro quando a chave existe e está **definida** (não nula/vazia) no `config.txt`.
+
+### Quests
+**QuestActive** - Verdadeiro quando a(s) quest(s) de ID informado está(ão) **ativa(s)** no quest log.  
+**QuestInactive** - Verdadeiro quando a(s) quest(s) de ID informado **não** está(ão) ativa(s).  
+**QuestHuntOngoing** - Verdadeiro quando o objetivo de caça (QuestID + MobID) está **em andamento** (não concluído).  
+**QuestHuntCompleted** - Verdadeiro quando o objetivo de caça (QuestID + MobID) está **concluído**.  
+**QuestTimeOverdue** - Verdadeiro quando a(s) quest(s) de ID informado está(ão) **overdue/expirada(s)** (fora do prazo).
+
+### Mapa / Entorno
+**InMap** - Verdadeiro quando o mapa atual é **um dos** mapas informados (aceita lista).  
+**NotInMap** - Verdadeiro quando o mapa atual **não** é o mapa informado.  
+**InMapRegex** - Verdadeiro quando o nome do mapa atual **casa com** a expressão regular informada (`/.../`).  
+**MobNearDist** - Verdadeiro quando a distância até o monstro mais próximo que casa com o regex informado atende à comparação (ex.: `< 1.5`).  
+**ChatRoomNear** - Verdadeiro quando existe um chat room por perto cujo título casa com o regex informado (`/.../`).
+
+### Diálogo / Mensagens
+**Console** - Verdadeiro quando a mensagem/linha do console casa com o regex informado (`/.../`).  
+**NpcMsg** - Verdadeiro quando a fala/mensagem do NPC casa com o regex informado (`/.../`).
+
+### Status / Recursos
+**CurrentHP** - Verdadeiro quando o HP atual atende à comparação informada (suporta valor absoluto e `%`, ex.: `< 60%`).  
+**CurrentSP** - Verdadeiro quando o SP atual atende à comparação informada.  
+**StatusActiveHandle** - Verdadeiro quando o status/buff identificado pelo *handle* informado está **ativo**.  
+**StatusInactiveHandle** - Verdadeiro quando o status/buff identificado pelo *handle* informado está **inativo**.  
+**Zeny** - Verdadeiro quando o zeny atual atende à comparação informada.
+
+### Nível / Classe
+**BaseLevel** - Verdadeiro quando o Base Level atende ao valor/expressão informada.  
+**JobLevel** - Verdadeiro quando o Job Level atende ao valor/intervalo informado (suporta intervalo `x..y`).  
+**JobID** - Verdadeiro quando o Job ID atual é **um dos** IDs informados (aceita lista).  
+**JobIDNot** - Verdadeiro quando o Job ID atual **não** é nenhum dos IDs informados.
+
+### Inventário / Equipamento
+**InInventoryID** - Verdadeiro quando a quantidade do ItemID informado no inventário atende à comparação (ex.: `>= 1`).  
+**IsNotEquippedID** - Verdadeiro quando o ItemID informado **não está equipado** (no slot informado, quando aplicável).
+
+### Lógica avançada
+**Eval** - Verdadeiro quando a expressão Perl informada em `Eval (...)` retorna **true**
+*/^(?!).*$/* - Regex. Verdadeiro quando **não** é o valor/expressão informado.
+*$lvl#* - Variável que contém as informações da escolha de Base Level para iniciar as quests.
+
+
 ## Quests do Éden 
 
 ### QUEST EDEN 00 
@@ -12,7 +62,6 @@ Este documento lista **somente** as **condições** de cada `automacro`, agrupad
 #### `eden00`
 - `JobIDNot 0`
 - `InInventoryID 22508 == 0`
-- `overrideAI 0`
 - `delay 30`
 
 
