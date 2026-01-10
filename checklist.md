@@ -50,9 +50,9 @@ Este documento lista **somente** as **condições** de cada `automacro`, agrupad
 **IsNotEquippedID** - Verdadeiro quando o ItemID informado **não está equipado** (no slot informado, quando aplicável).
 
 ### Lógica avançada
-**Eval** - Verdadeiro quando a expressão Perl informada em `Eval (...)` retorna **true**
-*/^(?!).*$/* - Regex. Verdadeiro quando **não** é o valor/expressão informado.
-*$lvl#* - Variável que contém as informações da escolha de Base Level para iniciar as quests.
+**Eval** - Verdadeiro quando a expressão Perl informada em `Eval (...)` retorna **true**.  
+**/^(?!).*$/** - Regex. Verdadeiro quando **não** é o valor/expressão informado.  
+**$lvl#** - Variável que contém as informações da escolha de Base Level para iniciar as quests.
 
 
 ## Quests do Éden 
@@ -62,7 +62,6 @@ Este documento lista **somente** as **condições** de cada `automacro`, agrupad
 #### `eden00`
 - `JobIDNot 0`
 - `InInventoryID 22508 == 0`
-- `delay 30`
 
 
 ### QUEST EDEN 03
