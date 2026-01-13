@@ -75,10 +75,11 @@ HWID necessário para ativação.
 
 ---
 
-## 🛠️ Configurações necessárias para boa execução do plugin:
+## 🛠️ O que você precisa fazer:
 
 * **config.txt**:
-  - *storageAuto_npc* com coordenadas configuradas.
+  - *statsAddAuto* *skillsAddAuto* definidos para o personagem upar atributos/skills.
+  - *storageAuto_npc* com coordenadas configuradas (se não estiver usando as rotas).
   - *route_maxWarpFee* vazio ou com valor acima de 20000.
 
 * **routeweights.txt**:
