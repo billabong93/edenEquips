@@ -11,7 +11,6 @@ use File::Basename qw(dirname);
 use Cwd qw(getcwd abs_path);
 use Encode qw(decode);
 use Globals qw($char);
-use Time::HiRes qw(time);
 
 Plugins::register('edenEquips', 'Quests do Grupo Éden', \&onUnload);
 
@@ -22,10 +21,7 @@ my $python_cmd   = "python3";
 my $injection_done;
 my $injection_in_progress;
 my $auth_status       = 'unknown';
-my $check_interval    = 3600; # seconds
-my $last_check_time   = 0;
-my $plugin_active     = 1;
-my ($in_game_hook, $loop_hook);
+my $in_game_hook;
 
 register_hooks();
 maybe_inject_macros();
@@ -48,7 +44,6 @@ sub maybe_inject_macros {
     if (update_proxy_and_inject($macro_file)) {
         $injection_done = 1;
         $auth_status    = 'allowed';
-        $last_check_time = time;
     }
 
     $injection_in_progress = 0;
@@ -115,9 +110,7 @@ sub update_proxy_and_inject {
 
 sub register_hooks {
     unregister_hooks();
-    $plugin_active = 1;
     $in_game_hook = Plugins::addHook('in_game', \&maybe_inject_macros);
-    $loop_hook    = Plugins::addHook('mainLoop_post', \&periodic_authorization_check);
 }
 
 sub unregister_hooks {
@@ -125,22 +118,15 @@ sub unregister_hooks {
         Plugins::delHook($in_game_hook);
         undef $in_game_hook;
     }
-
-    if ($loop_hook) {
-        Plugins::delHook($loop_hook);
-        undef $loop_hook;
-    }
 }
 
 sub onUnload {
 	Commands::run("reload eventMacros");
-    $plugin_active = 0;
     unregister_hooks();
 
     $injection_done        = 0;
     $injection_in_progress = 0;
     $auth_status           = 'unknown';
-    $last_check_time       = 0;
 
     message "[edenEquips] Plugin descarregado.\n";
 }
@@ -172,44 +158,6 @@ sub fetch_macro_payload {
     }
 
     return (0, $output);
-}
-
-sub periodic_authorization_check {
-    return unless $plugin_active;
-    return unless $char && $char->{charID};
-
-    my $now = time;
-    if (!$last_check_time) {
-        $last_check_time = $now;
-        return;
-    }
-
-    return if ($now - $last_check_time) < $check_interval;
-
-    $last_check_time = $now;
-
-    my ($res, undef) = fetch_macro_payload(1);
-
-    if ($res != 0) {
-        if ($auth_status ne 'denied') {
-            warning "[edenEquips] HWID - Acesso revogado. Recarregando eventMacros.\n";
-        }
-        if ($injection_done) {
-            Commands::run("reload eventMacros");
-        }
-        $injection_in_progress = 0;
-        $injection_done        = 0;
-        $auth_status           = 'denied';
-        return;
-    }
-
-    if ($auth_status eq 'denied') {
-        message "[edenEquips] HWID - Acesso restaurado. Recarregando eventMacros.\n";
-    }
-
-    $auth_status = 'allowed';
-
-    maybe_inject_macros() unless $injection_done;
 }
 
 1;
