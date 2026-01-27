@@ -142,7 +142,7 @@ HWID necessário para ativação.
 ---
 
 ### 💵 Investimento 
-* **R$50** / **HWID** - Pagamento unico.
+* **R$40** / **HWID** - Pagamento unico.
 
 
 ### 🚀 Implementações futuras
